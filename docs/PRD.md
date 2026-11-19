@@ -41,23 +41,48 @@ Decomposed into three independent variables we must each lock separately:
   strategy, not a global one. Any Bing/Copilot-conversion advantage claim is
   **UNVERIFIED — label it as a hypothesis in the demo.**
 
-## 2. Problem statement — locked after Decision B
+## 2. Problem statement (locked against D5–D15, 19 Nov)
 
-TODO. Must specify: the business type, what invisibility costs them today,
-what they can currently afford, and why a human agency doesn't serve them.
+Small impact-driven operators — heritage craft practitioners, environmental
+restoration groups, community and care organisations — are increasingly the
+*subject* of other people's pages while being absent from the answers
+themselves. Ask an AI engine or a non-Google search "where can I learn X /
+who still makes Y / who restores Z near me" and the answer names a journalist's
+feature, a hobby blog, a marketplace or an institution's write-up. Never the
+person doing the work. Their own site either does not exist (we verified
+press-only trade identities in `CANDIDATES.md`) or competes against that
+authority gap with no SEO capability.
+
+**Cost of invisibility** (mechanism inference; M1 quantifies it for us): lost
+workshop bookings, commissions, volunteers and donors, and for trades the
+training pipeline itself, because nobody can find someone to learn from.
+**What they can currently afford:** nothing like an agency retainer — which is
+exactly why an agency does not serve them. Our unit cost has to collapse to
+QwenWork credit cost (D6c), not to their budget.
+
+**Why a human agency won't do this:** query volume per subject is tiny, the
+content is evidence- and multilingual-heavy (EN/中文/Malay/Tamil/JA), and the
+refusal list in `EXECUTION §6.2` is economically impossible to honour at
+agency cost. Only agent delivery makes an honest, low-volume, high-rigour
+engagement viable at all.
 
 ## 3. Product thesis (the submission form's one-sentence description)
 
-Draft v0 (will be re-forced after B + C):
-> TODO — "The one-person agency that makes [X] the answer AI gives when
-> someone asks where to find [service/craft]."
+Working draft v1 (names still working names — D12):
+> **The one-person agency that makes vanishing trades, restoration projects
+> and community organisations the answer AI search gives when someone asks
+> where to find, learn, or support them.**
+
+Form/field reality: keep the one-sentence field under ~140 characters. Short
+variant for the pitch: **"Visibility rescue for the work nobody indexes."**
+Both pending the D12 positioning pass.
 
 ## 4. Why this is not a rebuild (Innovation 25%) — honest risk register
 
 | Risk | Why a judge would say it | Our answer once decided |
 |---|---|---|
 | "Semrush/Ahrefs exist" | Classic SEO tooling is commoditised and crowded | We're not selling rank tracking; scope must be the citation/legibility loop |
-| "You're pitching Hashmeta's own product to them" | Sponsor sells GEO services; a competing service is an odd hackathon entry | TODO — this is a **real conflict to resolve before B**. Options: be their *delivery* layer, serve the segment no agency touches, or build a wedge product that plugs their methodology |
+| "You're pitching Hashmeta's own product to them" | Sponsor sells GEO services; a competing service is an odd hackathon entry | **RESOLVED (D6b + D13 + D14).** We take the segment their own portfolio shows agencies don't serve — sub-scale trade custodians, restoration groups and community/care orgs, not Bosch / OCBC / CapitaLand-tier funded brands — we grade every technique against Google's primary guidance rather than a provider's list, and we publish the refusal list as enforced rules. We are the delivery layer for the tail they can't bill, not a rival for their book of business. Residual unknown is purely practical: account/tool access for the 15% website item |
 | "Wrapping LLM output in an empathetic wrapper" | Empathy/SPOILS is a positioning claim that needs proof, not a feature | The mechanism for the "empathetic" mechanism must be specific + auditable in the demo |
 
 ## 5. Core loop (draft — depends on A)
@@ -72,7 +97,16 @@ Draft v0 (will be re-forced after B + C):
 5. **Re-measure** and write the plain-language weekly to the owner.
    *Human (founder) approves outbound-facing changes; the agents do the rest.*
 
-TODO: choose which steps are truly built vs. staged in the demo.
+**Build vs staged for the demo (D9 + D10 posture A/B):**
+
+| Step | In-window reality | How it appears |
+|---|---|---|
+| 1 ingest | built — M1 reads real subjects' public material; the fix target is the labelled-synthetic subject | on camera |
+| 2 diagnose | built — real queries, dated, verbatim, graded ABSENT/MEDIATED/THIN/OWNED | on camera (founder browser = Manual Batch; I take SERP/page inventory + report build) |
+| 3 rebuild assets | built, ≤10 per engagement, evidence-classed, bylined real or labelled synthetic | on camera |
+| 4 publish | built — QwenWork Pages publish + IndexNow attempt; result logged either way, no promise | on camera |
+| 5 re-measure + briefing | scheduled re-check; after-state may be **partial and is reported as partial** (D10-B). No projected score (D10-C refused) | on camera |
+| approval gate | FR4 shown once as a real block-and-release on an outbound action | on camera |
 
 ## 6. Requirements
 
@@ -83,9 +117,10 @@ TODO: choose which steps are truly built vs. staged in the demo.
 | FR1 | Run ≥N real AI-engine queries against a target and log the verbatim answers + citations | Feasibility, QwenWork use, credibility | **MUST** | ☐ |
 | FR2 | Produce the assets that change those answers, as real files (schema'd pages, structured content) | Innovation, Feasibility | **MUST** | ☐ |
 | FR3 | Scheduled recurring re-measurement with a diff report for the owner | QwenWork use, Feasibility | **MUST** | ☐ |
-| FR4 | Audit trail + founder-approval gate before outbound / published changes | Demo (visible depth), Innovation (their handover as a feature?) | **SHOULD** | ☐ |
+| FR4 | Audit trail + approval gate before outbound/published changes; gate refuses even when the owner asks, where a rule forbids it | Demo depth, Innovation, institutional-buyer credibility | **MUST** (upgraded: the buyer is an institution, the gate *is* the sale) | ☐ |
 | FR5 | One-pager "visibility score" for a non-technical owner | Demo, Feasibility | **SHOULD** | ☐ |
-| FR6 | Customer-facing landing page (must be built with Hashmeta AI) | Website (15%) | **MUST** | ☐ |
+| FR6 | Customer-facing landing page (must be built with Hashmeta AI) | Website (15%) | **MUST** | ☐ **blocked** — account access (`MEMORY` open items) |
+| FR7 | Refusals + per-engagement asset ceiling (≤10) enforced as data in `rules/`, checked before any publish | Innovation (D14 differentiation), Feasibility (the customer's site survives algorithm updates) | **MUST** | ☐ |
 
 ### 6.2 Non-functional (from founder contract, not boilerplate)
 
@@ -101,7 +136,14 @@ TODO: choose which steps are truly built vs. staged in the demo.
 - Backlink outreach automation, crawl-audit parity with Ahrefs, paid ads,
   multi-tenant SaaS accounts/billing/dashboard, real customer onboarding,
   SOC2-ish compliance, mobile app.
-- **TODO: add ours as the track lock settles.**
+- Domain purchase. Multi-tenant accounts, SaaS dashboards, keyword databases.
+  Paid ads, link marketplaces, review solicitation (FR7 refusal). Competitor or
+  SERP scraping at scale. Naver *automation* (their robots.txt disallows
+  crawling → advisory gap only). Wikipedia article creation for a client.
+  Health/legal/financial claim generation for YMYL topics (a qualified human is
+  the author, or it does not ship).
+- Out of the demo: any projected "after" visibility score (D10-C refused), any
+  first-party Search Console number before the verification TBC test passes.
 
 ## 8. Success metrics for submission (23 Nov) and for the live pitch (11 Dec)
 
@@ -120,34 +162,56 @@ TODO: choose which steps are truly built vs. staged in the demo.
 | Dependency | Access to run real AI-engine queries for before/after evidence | If engines are unavailable, fall back to locally reproduced queries + screenshots of public tools — **label the substitution as a proxy, not a fact** |
 | Dependency | Hashmeta tooling account for the website | Founder to confirm account access |
 | Risk | GEO measurement is slow; a true before/after may not land in 6 days | Design the demo around an instantaneous, verifiable output, not a 6-week outcome |
-| Risk | Sponsor-overlap (pitching a service like a sponsor's business) | Resolve under Decision B before writing code |
+| Risk | Sponsor-overlap | **Resolved** in §4 (segment + evidence standard + published refusals) — what remains is access logistics, listed as a dependency, not strategy |
+| Dependency | Whether Search Console (URL-prefix) or Bing WMT verification works on a platform-issued subdomain (QwenWork Pages / GH Pages) | **TBC — 10-minute test, build day 1.** No first-party number on screen before it passes. Consequence if it fails: after-state evidence = browser screenshots + diff only (still honest under D10) |
 | Assumption | Solo delivery is credible for a 6-day build | Cut breadth, deepen the loop |
 
 ## 9b. Actor & consent model — see `MEMORY.md §3d`. Rescue needs 1
-asset-holder relationship (consent + byline + verification), not a market.
+asset-holder relationship (consent + byline + verification) **in real client
+work**. In this hack the measured layer is public observation only and the
+fixed layer is labelled-synthetic, so no verification call lands in-window;
+but the *reason* the call exists (a bylined real person is what makes a source
+citable, Hashmeta 9-factor #9) stays in the product as a feature, not a policy
+paragraph.
 
-10. Open questions to answer in the grilling (this is the PRD's real
-    to-do list)
+## 10. Open questions — pruned after the grilling (this is the resume list)
 
-1. ~~Track 1 vs Track 2~~ → LOCKED Track 1 (D5).~~demo subject~~ → LOCKED D9 two-layer (see §12).
-2. Decision A — product form.
-3. Decision B — paying customer (this is the Feasibility hinge **and** the
-   sponsor-overlap fix).
-4. Decision C — SEO vs GEO emphasis.
-5. Is there a real business we can use as the demo subject this week (a
-   genuine client beats a synthetic one on every weighted bucket)?
-6. Which of FR1–FR6 do we actually build vs. mock? (mock = say so in repo)
-7. What is the "empathetic/psychological" mechanism as a **feature**, not a
-   value statement?
-8. Any pre-existing asset to disclose at registration?
+1. ~~Track~~ **LOCKED D5** · ~~demo subject~~ **LOCKED D9** (§13) ·
+   ~~product form~~ **LOCKED D7** · ~~paying customer~~ **LOCKED D6d + §3b** ·
+   ~~SEO vs GEO emphasis~~ **LOCKED D6a + D14** · ~~build vs mock~~ **LOCKED §5 table**
+2. Entry fee and annual account contents once FR1 is real (D11).
+3. Does the FR7 ceiling of 10 assets per engagement fit our actual workload, or
+   is the right number 6?
+4. Post-11-Dec: can we convert one *real* Tier-A business from the verified
+   shortlist into a first pilot — and only then attach a real name to it?
+5. Empathetic/psychological as a mechanism is answered **in shape** by
+   D13/D14/YMYL + legibility-first briefing; still needs naming for a
+   non-technical owner (FR5 language design, D12).
+6. **Founder action:** does any pre-existing asset get disclosed **at
+   registration** (Rule 2)? All our docs/repos so far began 19 Nov, inside the
+   window — confirm nothing predates it.
+7. **Two ambiguities to put to organizers** (one message in their WhatsApp):
+   does FR6 require publishing *through* Hashmeta, and is "working live"
+   satisfiable by a recorded end-to-end run? Recorded today is my assumption.
 
-## 11. Decision log — mirror; the authoritative log lives in `MEMORY.md §6`
+## 11. Decision log — mirror; authoritative log in `MEMORY.md §6`
 
-| # | Question | Options | Chosen | Who | Date |
-|---|---|---|---|---|---|
-| — | awaiting the grilling | | | | |
+| # | Question | Chosen | Why the alternatives lost |
+|---|---|---|---|
+| D5 | Track | **Track 1** Business Ops & Automation | Track 2 = kit-first governance product; we keep kit material as optional test/fixture only |
+| D7 | Product form | **Productised service ladder** (Rescue → institutional annual account) | SaaS needs distribution we can't own in 5 days; one-off projects = no recurring revenue story |
+| D6a | Visibility surfaces | **"Everywhere the answer is found"** — AI engines + Bing/Baidu/Naver + social discovery; browsers ≠ engines (D6a correction) | "non-Google web engines" contradicted StatCounter (Google ~90%+ of web queries) |
+| D6b | Invisibility evidence | Sponsor-published numbers first, then replicate our own queries in M1 | quoting the gap without measuring it, or measuring without sources |
+| D6c | Margin claims | Only claims traceable to measured credit cost per engagement | asserting an unmeasured margin in front of judges |
+| D6d | Gov / influencers / flywheel | gov = buyer not proof; influencers = citation mechanism *inside* the product; "brings businesses up" = impact reach | adding them as customer segments = two unrelated sales motions in a 3-minute demo |
+| D9 | Demo subject | **Real measured layer + labelled-synthetic fixed layer** | naming a real client inside AI copy we wrote = attribution risk + redistribution licence + "explain any part" |
+| D10 | Evidence posture | **A + B** (retrieval-level moment), **C refused** | a projected score is unverifiable in 6 days and reads as theatre under questioning |
+| D13 | Impact verticals | trades + environmental + community/care **with the YMYL content gate** | care vertical without a credibility gate = real harm risk, not just ranking risk |
+| D14 | Technique standard | Google's primary docs grade every lever; vendor advice marked as such | copying one provider's technique list (the Innovation-25% trap) |
+| D15 | Hosting | **QwenWork Pages, no domain purchased** | a domain buys us nothing in-window and adds cost, DNS and verification risk |
+| D11 / D12 | pricing · naming | **OPEN** | D11 waits on measured cost; D12 needs the positioning pass |
 
-## 12. D9 outcome — demo subject (locked 19 Nov, founder's call)
+## 13. D9 outcome — demo subject (locked 19 Nov, founder's call)
 
 Two-layer build, full list with sources/dates in `CANDIDATES.md`.
 

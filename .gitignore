@@ -4,5 +4,10 @@ __pycache__/
 node_modules/
 .DS_Store
 *.log
+!runs/*.log
+!runs/**/*.log
 .venv/
-dist/
+
+# NOTE: audit-ledger evidence lives in runs/ and MUST be committed.
+# The rules/ data, queries.yaml and levers.yaml are the product. Do not add
+# broad ignores (*.log, data/, runs/) that would silently drop our evidence.

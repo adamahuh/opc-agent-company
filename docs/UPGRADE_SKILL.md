@@ -43,6 +43,14 @@ caveated. Judges cannot audit a caveat inside 3 minutes; cut silently.
   sensitivity level, audit events, and a concrete proof artifact for the
   demo.
 
+## Build order — superseded by `EXECUTION.md §3` on 19 Nov
+
+D5–D15 replaced the daily plan below (the track landed Track 1, the subject
+went two-layer, hosting went QwenWork Pages, no domain). The build order now
+lives in `EXECUTION.md §3`; §4 of *this* file still holds: nothing ships to
+the demo with a `PLATFORM-CAP` / `TO-BUILD` status the day before. Keeping the
+old table only as an audit trail of how fast the plan moved.
+
 ## Build order for this doc (6-day plan)
 
 | Day | Action in SKILL.md | Exit gate before moving |
