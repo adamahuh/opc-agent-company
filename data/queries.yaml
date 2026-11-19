@@ -1,0 +1,58 @@
+# v0 2026-11-19 · read-only source of truth: docs/QUERIES.md explains the rules behind these
+# subject S1 is SYNTHETIC (modelled on observed SG beadwork practitioners) - see CANDIDATES.md
+meta:
+  date: 2026-11-19
+  language_of_record: en
+  surfaces: [google_web, google_ai_overviews, chatgpt, gemini, perplexity, bing, duckduckgo, youtube, instagram, tiktok]
+  naver_mode: manual_only_no_crawling   # search.naver.com/robots.txt disallows all
+  grading: [ABSENT, MEDIATED, THIN, OWNED]
+subjects:
+  - id: S1
+    label: Peranakan beadwork practitioner (synthetic, modelled on real ones)
+    ymyl: false
+    queries:
+      - {q: "Peranakan beadwork shoes Singapore", intent: purchase}
+      - {q: "kasut manek Singapore buy", intent: purchase}
+      - {q: "where to learn Peranakan beadwork Singapore", intent: learn}
+      - {q: "Nyonya beaded slippers maker Singapore", intent: verify}
+      - {q: "traditional beading workshop Singapore", intent: learn}
+      - {q: "加东娘惹手工珠绣鞋 新加坡", intent: purchase, lang: zh}
+      - {q: "kasut manek Nyonya tradisional Singapura", intent: purchase, lang: ms}
+  - id: S2
+    label: Rattan hand-weaver with no owned web presence (real observation layer)
+    ymyl: false
+    queries:
+      - {q: "last rattan chair weaver Singapore", intent: verify}
+      - {q: "hand woven rattan chair Singapore maker", intent: purchase}
+      - {q: "buy handmade rattan furniture Singapore artisan", intent: purchase}
+      - {q: "rattan weaving workshop Singapore", intent: learn}
+      - {q: "新加坡 手工藤椅 老师傅", intent: verify, lang: zh}
+  - id: S3
+    label: Japanese joinery / woodworking schools (real observation layer)
+    ymyl: false
+    queries:
+      - {q: "Japanese joinery class Singapore", intent: learn}
+      - {q: "traditional Japanese woodwork workshop Singapore", intent: learn}
+      - {q: "suikoushya singapore", intent: navigational}
+      - {q: "日本大工 教室 シンガポール", intent: learn, lang: ja}
+  - id: S4
+    label: Environmental restoration / regeneration operators
+    ymyl: false
+    queries:
+      - {q: "mangrove restoration Singapore volunteer", intent: participate}
+      - {q: "community garden Singapore adopt a plot", intent: purchase}
+      - {q: "urban farm Singapore buy produce", intent: purchase}
+      - {q: "repair cafe Singapore fix electronics", intent: purchase}
+      - {q: "circular textile upcycling Singapore studio", intent: purchase}
+  - id: S5
+    label: Societal / care organisations  (YMYL GATE: questions only, no claims generated)
+    ymyl: true
+    queries:
+      - {q: "elder care social enterprise Singapore", intent: verify}
+      - {q: "disability arts studio Singapore", intent: verify}
+      - {q: "migrant workers community centre Singapore support", intent: verify}
+      - {q: "how do I find a trustworthy home care provider Singapore", intent: information_only}
+measure:
+  primary: "cited_share_of_answer  (sources where host == subject domain) / N"
+  secondary: [serp_rank_position, mediated_citation_count, answer_excerpt_similarity]
+  honesty: "before-state provable in window; after-state re-indexing not guaranteed (D10: posture A+B; no projected-score claims)"

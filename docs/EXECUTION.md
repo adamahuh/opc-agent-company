@@ -204,3 +204,15 @@ is not a weakness, it's the only credible thing in the room.
 6. Credit reality check for parallel QwenWork tasks (feeds the §4 unit-cost figure).
 7. D8 still deferred until the audit pipeline (M1–M4) is real.
 
+
+## 10. M1 instrument (built 19 Nov, runs before any Hashmeta/verification answer)
+
+`data/queries.yaml` (5 subjects × 4–7 queries, multi-lingual EN/中文/马来/JA/TA-
+region checks, grade scale ABSENT→MEDIATED→THIN→OWNED, primary metric =
+cited share of answer), and its editorial rationale + refusals in
+`docs/QUERIES.md`.
+
+This is deliberately the **first** thing to exist, because M1 is simultaneously
+the product, the evidence, the Manual Batch run sheet (founder runs the
+browser queries; no credentials, no API, no waiting on anyone), our before-state
+data, and the artifact that gets quoted in FR4's diff.
