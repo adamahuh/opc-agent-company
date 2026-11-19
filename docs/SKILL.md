@@ -35,6 +35,18 @@ Notes live in the info repo at `AVEPOINT_STARTER_KIT.md`. Kit contents are
 | `borealis` = temporary cross-boundary inspection, `end borealis` restores scope | This becomes our **least-privilege escalation** primitive: an agent that must read another workflow's data has to declare it, and the scope returns on request. |
 | After shipped work / agreed batches, return to LD by default | Default state after success in a demo: **the agent stops and tells the owner, rather than proceeding**. |
 
+## 1b. Two numbering systems, on purpose (reconciled 19 Nov after Track 1 locked)
+
+| System | Where | What it is |
+|---|---|---|
+| **S0–S9** (this file, §2) | here | *Platform evidence rows*: which QwenWork capability does the real work, its mode gate, its artifact. Scores the 20% |
+| **P1→P5** / **M1–M7** | `BATCH.md §2`, `EXECUTION.md §3` | The product pipeline (measure/grade/author/publish/re-measure) and the build order |
+
+They cross-reference (S7≈P1, S6≈P3+P4, S5≈P5) but are not the same axis and
+must not be merged — merging loses either scoring evidence or process.
+Statuses below stay as they are until a run writes an artifact into `runs/`;
+that is the founder contract, not tidiness.
+
 ## 1. Reading the inventory table
 
 | Column | Meaning |
@@ -67,7 +79,7 @@ Notes live in the info repo at `AVEPOINT_STARTER_KIT.md`. Kit contents are
 | S3 | Score outputs for policy violations | `oversight` agent + starter-kit `rules/policy.md/json` (19 rules, ALLOW/APPROVE/NEVER) | KIT-VERIFIED | chained from S1 | LD-ok | none | rule id, severity, snippet, decision | 40 s |
 | S4 | Block or escalate in real time | approval-gate hook | PLATFORM-CAP (platform behaviour documented; our gate untested) | on risky action at S2 | **blocks → Ship** | sends request to founder | gate + response window | 50 s (core demo beat) |
 | S5 | Daily plain-language briefing to the owner | QwenWork scheduled task via scheduler primitive | PLATFORM-CAP | scheduled | Automata | none (internal) | job id, inputs, produced doc, timestamp | 60 s |
-| S6 | Generate external-facing assets (landing copy/brand/visuals/decks/promo video) | platform output formats: docs, slide decks, live web pages and publishing, image/video generation | PLATFORM-CAP (capability set documented; not exercised by us yet) | Ship/automata | **Ship required** (publishes) | publish to external URL | URL, timestamp, publisher id | 30 s |
+| S6 | Author rescue assets + **publish the synthetic subject site** | `asset_agent`/`index_agent` + platform output formats + **QwenWork Pages** (D15, chosen over GH Pages = "engine not checkbox" evidence; ≤10 assets ceiling FR7) | PLATFORM-CAP (not exercised yet) | **Ship** (publishes) | publish to external URL | URL, timestamp, IndexNow/recrawl attempt (success *or blocked*, both logged), ceiling check | 30 s, incl. the approval gate firing |
 | S7 | Research / evidence gathering for agent claims | `web-search`, `webfetch` | CONFIRMED (used this session for hub/kit checks) | LD-ok | external read only | queries, sources, dates, evidence class | 40 s (hallucination scoring) |
 | S8 | Detect and score a deliberately misbehaving worker agent | oversight + 5 scripted scenarios | KIT-VERIFIED (scenarios exist; our catch-rate unknown) | batch | LD-ok | none | scenario id, caught/missed, evidence | 70 s — the money shot |
 | S9 | Explain the decision to a non-technical owner | "owner briefing" skill (legibility = win condition) | To build | scheduled + S2 | LD-ok | none | briefing artifact hash | throughout |
@@ -133,8 +145,12 @@ Fill the remaining contracts as skills get locked, in this shape.
 - Every batch writes a handover row (what was added/removed/replaced, files +
   contracts, exact validation performed, proof level, unproven items).
 
-## 6. Track decision still open
+## 6. Track resolved (D5, 19 Nov) — Track 1, Business Operations & Automation
 
+- Track 1 means this file's S-rows describe **the agency's workers**; oversight
+  (S2/S4/S8) is a *feature we show*, not the product — right for institutional
+  buyers who cannot delegate real client data to an unverifiable agent.
+- Old framing below (kept as decision record):
 - **Track 1 (operations & automation)** = the product is the working company;
   oversight is a safety measure we show in passing.
 - **Track 2 (governance/security/decision-making)** = the product IS the
@@ -143,8 +159,13 @@ Fill the remaining contracts as skills get locked, in this shape.
   company plus 19-rule ALLOW/APPROVE/NEVER policy and 5 scripted misbehaviours.
   The kit says judging scores the oversight built and how legible it is to the
   owner, not how closely you follow the doc. That makes S8/S9 — catching the
-  five scenarios and explaining them to a non-technical owner — the core
-  technical + narrative challenge; if we do this, do it properly.
+  five scenarios and explaining them to the owner — the core technical and
+  narrative challenge on Track 2. We are **not** on Track 2, so this whole
+  paragraph became history. What survives D5: the kit's 5 scripted
+  misbehaviours stay useful as the most objective way to test **our own**
+  approval gate ("caught 5/5" is a proof level, not a claim), and kit files may
+  appear as fixtures only under `rules/` — data, never instructions. The
+  AvePoint material is now optional test material, not our spec.
 
 ## 7. Skill-source ledger (what we can actually call, and how it got here)
 
@@ -188,8 +209,11 @@ not a pass; founder QA is a separate gate we do not pre-mark.
 
 ## 10. Companion files & active agent role
 
-`UPGRADE_SKILL.md` — how to close the remaining rows before the deadline,
-plus the six-day build order and its exit gates.
+`UPGRADE_SKILL.md` — how to close rows before the deadline (its 6-day table
+is superseded by `EXECUTION.md §3`, kept as the plan's audit trail);
+`EXECUTION.md` — M1–M7, hosting/devices/accounts, engine access matrix,
+L1–L10 levers + refusals; `QUERIES.md` + `data/queries.yaml` — the M1
+instrument; `CANDIDATES.md` — the D9 two-layer subject list.
 
 `MEMORY.md` — persistent founder contract, decision-guide role,
 locked/open decisions, and the decision log. Any new session or agent starts
