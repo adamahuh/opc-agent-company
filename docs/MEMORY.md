@@ -80,6 +80,22 @@ GitHub is the durable record. So: **before a log-off summary, commit and push
 that summary** — an unpushed handover is a handover nobody can read. Current
 session summary: `docs/HANDOVER_2026-11-19.md`.
 
+
+## 2c. Communication calibration (founder, 19 Nov — permanent)
+
+Length is not the constraint; **comprehensibility is.** Write as if explaining
+to a Singapore university business student: economics-literate, zero assumed
+technical vocabulary. Apply:
+
+- Any technical term gets a one-line plain definition on first use.
+- Prefer local, checkable examples (SG institutions, SG crafts, SG prices in
+  S$) over abstractions — the judges are in the same market.
+- Explain **why a decision matters to the score or to revenue** before asking
+  for it. If a question can't be motivated in two sentences, the question is
+  premature.
+- State plainly what we do **not** know and what would cost little to find
+  out. No hedging, no jargon cover.
+
 ## 3. Product direction (founder-stated, 19 Nov)
 
 > An SEO tool that serves socially driven businesses — those rejuvenating the
@@ -186,6 +202,6 @@ synthetic in the video — passing them off as real is what would cost us the
 | D6d | 19 Nov | Segments "bring businesses up" = the **flywheel** (impact reach), never an ICP. **Government/council = institutional BUYER** (D5/D6 recommendation) but its procurement cycle ≠ viability proof and must be labeled honestly. **Influencers/journalists = a citation source / earned-authority mechanism inside the product engine** (per CITE: authority via digital PR + bylined authorship + earned media weighted by training data), NOT a customer segment. | adding influencers+gov as customers (rejected: dilutes ICP, rebuilds generic SMB SEO) | Agent recommendation, founder accepted | — |
 | D7 | 19 Nov | **Decision A = tiered service ladder** (founder picked options 1+3): entry "AI Visibility Rescue" (fixed scope, productised deliverables) that expands into **an institutional annual account** (retainer: ongoing monitoring + reporting + capacity). Not SaaS. The tooling stays *internal* — the platform is our engine, not our product. Consequence for the demo: the working artifact is an *engagement run*, and the business story has two numbers (entry fee, retention value). | SaaS self-serve scanner (rejected for 6-day feasibility + distribution); pure one-off projects (rejected: no recurring revenue = weak 25% viability) | **Founder choice** (1+3), agent-refined into a ladder | high while pre-build |
 | D8 | 19 Nov | **Deferred by founder — and correctly so.** The question "who pays for the rescue?" cannot be answered until the actor model (3d above) is understood and agreed. Agent recommends same buyer for both tiers (1 motion, demo fits). Re-ask after D9/D10 lock. | | |
-| D9 | 19 Nov | **Subject we build against for the demo** | real named institution; real named trade w consent; synthetic but labelled; our own published research as the demo world | **OPEN — next grill** |
+| D9 | 19 Nov | **Subject we build against for the demo**. Evidence gathered (1 search, needs the AI-query test before it is proof): National Heritage Board runs a public Intangible Cultural Heritage directory at roots.gov.sg incl. "Nyonya beadwork and embroidery"; a named practitioner business nyonyaneedlework.com exists for the same craft; and third-party tutorial/marketplace sites (craftpassion.com, khinkhwab.com) publish on it too. **Inference, not yet measured:** the practitioner competes for visibility against an institution and against content farms that have SEO teams — which is precisely our product's problem statement, in the judges' own market. **FACT: we have not yet tested what AI engines actually answer.** | real trade + consent (rec); institution's public collection; anonymised real trades; fictional | **OPEN — being grilled** |
 | D10 | 19 Nov | Honest evidence strategy: is "AI now cites us" a 6-day claim at all? Before-state IS freely measurable now; after-state indexing/ingestion is NOT guaranteed in 6 days. | index-after / retrieval-level proof / proxy labelled / asset-diff table only | **OPEN — grill after D9** |
 | D6 | 19 Nov | ICP scope: founder answered "why not all?" to Institutions-vs-Trades-vs-Impact-businesses. Agent's counter: all three is not a segment, it is a *frame* — needs one beachhead for the demo + one pricing unit for the pitch | single beachhead (rec); unified "public-interest GEO" frame; two-tier (institution-funded + self-serve) | **UNRESOLVED** | — |
