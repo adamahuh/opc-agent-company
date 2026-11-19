@@ -129,7 +129,7 @@ asset-holder relationship (consent + byline + verification), not a market.
 10. Open questions to answer in the grilling (this is the PRD's real
     to-do list)
 
-1. Track 1 vs Track 2 → `SKILL.md §6`.
+1. ~~Track 1 vs Track 2~~ → LOCKED Track 1 (D5).~~demo subject~~ → LOCKED D9 two-layer (see §12).
 2. Decision A — product form.
 3. Decision B — paying customer (this is the Feasibility hinge **and** the
    sponsor-overlap fix).
@@ -146,3 +146,19 @@ asset-holder relationship (consent + byline + verification), not a market.
 | # | Question | Options | Chosen | Who | Date |
 |---|---|---|---|---|---|
 | — | awaiting the grilling | | | | |
+
+## 12. D9 outcome — demo subject (locked 19 Nov, founder's call)
+
+Two-layer build, full list with sources/dates in `CANDIDATES.md`.
+
+| Layer | Subject | What it proves |
+|---|---|---|
+| **Measured** | Real SG trades: verified practitioner sites `nyonyaneedlework.com`, `mokkowoodstudio.com`, `suikoushya.com` (each loaded 19 Nov, HTTP 200); press-only trades (rattan Chen Foon Kee, joss-stick Tay Guan Heng) as the extreme case | The problem is real and current → Feasibility/Viability + Innovation credibility. Public observation only |
+| **Fixed** | One fictitious one-person craft business profiled from the above, labelled synthetic on screen and in site copy | The product running end-to-end → Demo + QwenWork-use evidence |
+
+Line we do not cross: no AI-generated copy attributed to a real named
+pritioner appears in the demo, the website, or anything the organisers may
+redistribute under the licence clause.
+
+Unlocks next: **D10** (what the 3-minute video is allowed to claim about
+"after"), then **D11** (pricing with measured credit cost), then naming.
