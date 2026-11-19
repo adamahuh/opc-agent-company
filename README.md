@@ -35,8 +35,10 @@ AI engines and search actually give** — measured, then fixed, then re-measured
 | 6 | `docs/QUERIES.md` → `data/queries.yaml` | Instrument spec + the exact queries we run. Nothing enters the video without all four evidence types |
 | 7 | `docs/HANDOVER_2026-11-19.md` | Chronological session log — see the last addendum for where we paused |
 
-`docs/{BIZ_MODEL,BATCH,DEMO_SCRIPT,WEBSITE}.md` are working documents; their
-remaining TODOs are listed honestly in `HANDOVER addendum 4`.
+`docs/{BIZ_MODEL,BATCH,DEMO_SCRIPT,WEBSITE}.md` were filled from D5–D15 in the
+19 Nov doc round (`HANDOVER addendum 5`). Their open holes are **unfilled on
+purpose**: pricing numbers wait for measured cost (D6c/D11), the website waits
+on Hashmeta access, and the demo's bracketed figures wait on M1.
 
 ## The repo is the evidence
 
