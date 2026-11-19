@@ -16,11 +16,11 @@ Decomposed into three independent variables we must each lock separately:
 
 | Variable | Options on the table | Status |
 |---|---|---|
-| A. Product form | audit tool · always-on agent service · productised agency | **OPEN** |
-| B. Paying customer | artisans/trades · eco businesses · impact NGOs/foundations · cultural institutions · impact-driven DTC | **OPEN** |
-| C. The "SEO" that wins | classic Google ranking · **GEO/AEO** (being cited in ChatGPT/Gemini/AI Overviews) · social discovery · all three | **OPEN** |
+| A. Product form | **LOCKED: tiered service ladder** — entry "AI Visibility Rescue" → institutional annual account. The tooling is internal (our engine), not a SaaS product. | **LOCKED 19 Nov (D7)** |
+| B. Paying customer | **buyer = institution w/ preservation mandate** (museum / cultural council / guild / heritage programme); **beneficiary = the trade, its remaining practitioners, and the local ecosystem**. Open sub-question (D8): does the same buyer purchase the entry tier too, or does the entry tier sell to practitioners/guilds? Currently leaning "yes, same buyer" so we have one sales motion. Influencers/journalists are an internal *citation mechanism* (D6d), not a customer segment. | **PART LOCKED** |
+| C. The visibility surface we win | **LOCKED: multi-surface, GEO-primary.** Framed as "everywhere the answer is actually found" = AI answer engines (ChatGPT, Gemini, Perplexity, Claude, Copilot, Grok, AI Overviews, DeepSeek, Ernie, and local/regional engines where Naver/Baidu dominate) + classic search + social discovery. **Not** pitched as "we rank you on Bing". | **LOCKED (D6a)** |
 
-### Working position on C (recommended, not yet yours)
+### Evidence for C (StatCounter, Oct 2026 — facts, quoted with source and date)
 
 **GEO/AEO is the play, not classic SEO.** Reasons, with the counter-evidence:
 
@@ -33,6 +33,13 @@ Decomposed into three independent variables we must each lock separately:
 - *What undermines it:* GEO tooling is nascent; measurement ("am I cited?")
   is noisy and hard to prove in 3 minutes. Judges wanting a "real business"
   may read AI-citation counts as vanity metrics.
+
+- StatCounter worldwide Oct-2026 search share: Google 91.05, Bing 4.8, Yahoo
+  1.18, Yandex 1.14, DuckDuckGo 0.64, Baidu 0.42.
+- StatCounter Singapore: Google 92.35. StatCounter South Korea: Google 48.48
+  vs **Naver 42.25** (plus Daum). → "Alternative engines" is a *specific-market*
+  strategy, not a global one. Any Bing/Copilot-conversion advantage claim is
+  **UNVERIFIED — label it as a hypothesis in the demo.**
 
 ## 2. Problem statement — locked after Decision B
 
