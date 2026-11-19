@@ -204,6 +204,21 @@ root returns a blocking `robots.txt` we cannot control, the site's AI-crawler
 access might get blocked — check this, because it's a hidden blocker of the
 after-state itself.
 
+## 3f. Demo video assumption set (founder, 19 Nov) + Hashmeta shelved
+
+Assumed structure — no organizer confirmation needed for any of it:
+**A. problem → B. solution walkthrough → C. feasibility**, Hashmeta website
+parked (founder will account for it later; it stays the 15% risk item).
+Scoring read: A≈Innovation 25, B≈QwenWork use 20 + Demo 15, C≈Feasibility 25
+→ the three acts hit ~85% of the score. **Fact:** ~15% (website) is currently
+unaddressed on purpose, and the demo's engine answers are the **Manual Batch**
+layer (founder's browser) — I cannot converse with ChatGPT/Gemini/Perplexity/
+Copilot/Grok/DeepSeek/Ernie; programmatic engine querying would need API keys
+(OpenAI/Google/Perplexity all offer web-connected modes) — **assumption:**
+available with keys, **TBC:** whether the consumer *answer* matches the browser.
+The browser evidence stays the primary (it's what the customer's customer sees),
+so no part of act B depends on API access existing.
+
 ## 4. Hackathon facts (hard constraints)
 
 - Build window 17–23 Nov 2026. Deadline **Nov 23 23:59 SGT** (15:59 UTC) = 48h
