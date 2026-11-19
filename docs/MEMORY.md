@@ -219,6 +219,19 @@ available with keys, **TBC:** whether the consumer *answer* matches the browser.
 The browser evidence stays the primary (it's what the customer's customer sees),
 so no part of act B depends on API access existing.
 
+## 3g. Execution-agent handover (created 19 Nov)
+
+`docs/HANDOVER_EXECUTION_AGENT.md` is the charter for the build-side chat: read order,
+locked list (D5/D6a/D7/D9/D10/D13/D14/D15/§3f), M1-only scope + acceptance checks,
+the **engine-answer boundary** (I verified: no conversation path into consumer chat
+engines from this environment — founder browser or founder-supplied API keys only;
+never substitute silently), stop-and-ask triggers, the founder-contract report format
+(incl. the mandatory "what remains unproven" line), milestone table + cut line, and
+§8 known gaps (organiser answers, Hashmeta access, Pages verification TBC, no API keys).
+Durability facts are in §0 because `/tmp` wipes bit us twice this session.
+**Note:** Multi-Agent mode has no docs entry and the founder could not find the toggle;
+treat parallel sub-sessions as unavailable unless *he* confirms otherwise.
+
 ## 4. Hackathon facts (hard constraints)
 
 - Build window 17–23 Nov 2026. Deadline **Nov 23 23:59 SGT** (15:59 UTC) = 48h
