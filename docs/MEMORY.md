@@ -51,6 +51,35 @@ feature/scoping decision I must:
 5. Protect feasibility claims from becoming demo theater — if there's no
    artifact, it is not a capability.
 
+
+## 2b. Summarization triggers — founder-commanded behaviour (19 Nov)
+
+The founder asked for a **resume pack** used in exactly two situations. When
+either fires, stop expanding and consolidate — a written summary, not a chat
+wall.
+
+| Trigger | What I do |
+|---|---|
+| **Information load is high** — multiple researched sources, several decisions pending, or we are about to choose next steps | Produce a compact consolidation **before** asking the next question: bottom line, verified facts w/ source+date, what changed in our position, what's locked, what's open, do-next-in-order. Written to `docs/HANDOVER_YYYY-MM-DD.md` so it survives the session. |
+| **Founder is about to log off / says they'll come back** | Same file, plus: last commit hash, the one question that resumes the thread, the exact read order, and a "not proven yet" list so next-session me doesn't inherit an unearned claim. |
+
+Hard rules on every summary: preserve numbers/dates/units verbatim; attribute
+fact vs inference vs assumption vs founder-decision (handover
+`AI_WORKING_HANDOVER.md §1`); never let the summary become rosier than the
+source; name what was *not* verified. The quality gate I must pass is the
+skill's own: *"could someone make a decision from this summary alone?"*
+
+**Resume protocol for any new session:** 1) `git clone` / pull
+`opc-agent-company` 2) read `docs/MEMORY.md` 3) newest
+`docs/HANDOVER_*.md` 4) `docs/PRD.md` §10 open questions — then ask the
+founder the single question already queued there. Don't re-litigate locked
+decisions (D4–D8) unless they reopen one.
+
+**Durability note:** sandbox working copies under `/tmp` are ephemeral.
+GitHub is the durable record. So: **before a log-off summary, commit and push
+that summary** — an unpushed handover is a handover nobody can read. Current
+session summary: `docs/HANDOVER_2026-11-19.md`.
+
 ## 3. Product direction (founder-stated, 19 Nov)
 
 > An SEO tool that serves socially driven businesses — those rejuvenating the
@@ -132,6 +161,7 @@ synthetic in the video — passing them off as real is what would cost us the
 ## 5. Locks (not yet locked)
 
 | Decision | Status | Blocker |
+|---|---|---|
 |---|---|---|
 | Track 1 vs Track 2 | **LOCKED: Track 1** (Business Ops & Automation) | decided 19 Nov by founder (D5) |
 | ICP (vanishing trades / environment / social) | OPEN — founder replied "why not all?" to the 3-way choice; needs reconciliation (D6) | demo + BIZ_MODEL need one subject |
