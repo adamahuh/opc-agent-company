@@ -86,6 +86,34 @@ in writing if it changes a decision (see open question Q-WA in PRD §10). Our
 posture above survives either reading: a working one-person business is right
 whether the audience is pre-seed or existing.
 
+## 3c. Communication rule added after founder feedback (19 Nov)
+
+No invented working names get used more than twice before explaining why the
+term exists and what it replaced. Internal shorthand must never be confused
+with market terms. Names are always changeable — they are positioning
+decisions, not facts.
+
+**Working names in use, with their reason:**
+| Name | What it means internally | Reason this name was chosen | Status |
+|---|---|---|---|
+| **Rescue** | First paid engagement: time-boxed citation audit + authoring/publishing the assets that fix the invisibility | An audit sounds shelveable; a rescue is bounded, has a visible outcome, and is one yes/no email for an institution. Not a market term; final name comes from the positioning decision | working |
+| **Annual Account** | Recurring monitoring + reporting for institutions with mandate and budgets | The buyer's procurement word for "we're kept" — recurring, margin | working |
+
+## 3d. Actor model (locks the relationship chain before payment structure)
+
+| Actor | Identity | Contact required? | Why |
+|---|---|---|---|
+| **Asset-holder** | practitioner/guild/museum/cultural council whose material is being cited | **Yes** — one verification call per rescue | Their consent + credential byline is the citation mechanism: Hashmeta 9-factor #9 says bylined expert + Author schema get treated as more authoritative; institution marketing copy alone would be a weak source. Also protects us on truth + "explain any part of your submission" |
+| **Buyer** | institution w/ mandate + reporting deadline | **Yes** — sale + delivery | Pays both tiers; already has an existing programme relationship with asset-holders (we ride the trust that already exists, we do not broker it) |
+| **Beneficiary/ecosystem** | other practitioners, tourism, suppliers, learners | **No** | They get reached through asset-holder's platform |
+| **Audience** | people asking web+AI engines about the craft | **No** | Measured indirectly: search + AI query evidence |
+
+**Consequence for the demo:** a rescue needs 1 asset-holder relationship, not a
+market. We can legitimately show one named rescue if we get consent before
+the 23 Nov submission. Synthetic stand-ins are possible but must be labelled
+synthetic in the video — passing them off as real is what would cost us the
+"working product" honesty we need to keep.
+
 ## 4. Hackathon facts (hard constraints)
 
 - Build window 17–23 Nov 2026. Deadline **Nov 23 23:59 SGT** (15:59 UTC) = 48h
@@ -127,5 +155,7 @@ whether the audience is pre-seed or existing.
 
 | D6d | 19 Nov | Segments "bring businesses up" = the **flywheel** (impact reach), never an ICP. **Government/council = institutional BUYER** (D5/D6 recommendation) but its procurement cycle ≠ viability proof and must be labeled honestly. **Influencers/journalists = a citation source / earned-authority mechanism inside the product engine** (per CITE: authority via digital PR + bylined authorship + earned media weighted by training data), NOT a customer segment. | adding influencers+gov as customers (rejected: dilutes ICP, rebuilds generic SMB SEO) | Agent recommendation, founder accepted | — |
 | D7 | 19 Nov | **Decision A = tiered service ladder** (founder picked options 1+3): entry "AI Visibility Rescue" (fixed scope, productised deliverables) that expands into **an institutional annual account** (retainer: ongoing monitoring + reporting + capacity). Not SaaS. The tooling stays *internal* — the platform is our engine, not our product. Consequence for the demo: the working artifact is an *engagement run*, and the business story has two numbers (entry fee, retention value). | SaaS self-serve scanner (rejected for 6-day feasibility + distribution); pure one-off projects (rejected: no recurring revenue = weak 25% viability) | **Founder choice** (1+3), agent-refined into a ladder | high while pre-build |
-| **OPEN DEPENDENCY from D7:** both tiers must be bought by the **same buyer** or we have two unrelated sales motions in a 3-minute demo. Being grilled now as D8. | | | | |
+| D8 | 19 Nov | **Deferred by founder — and correctly so.** The question "who pays for the rescue?" cannot be answered until the actor model (3d above) is understood and agreed. Agent recommends same buyer for both tiers (1 motion, demo fits). Re-ask after D9/D10 lock. | | |
+| D9 | 19 Nov | **Subject we build against for the demo** | real named institution; real named trade w consent; synthetic but labelled; our own published research as the demo world | **OPEN — next grill** |
+| D10 | 19 Nov | Honest evidence strategy: is "AI now cites us" a 6-day claim at all? Before-state IS freely measurable now; after-state indexing/ingestion is NOT guaranteed in 6 days. | index-after / retrieval-level proof / proxy labelled / asset-diff table only | **OPEN — grill after D9** |
 | D6 | 19 Nov | ICP scope: founder answered "why not all?" to Institutions-vs-Trades-vs-Impact-businesses. Agent's counter: all three is not a segment, it is a *frame* — needs one beachhead for the demo + one pricing unit for the pitch | single beachhead (rec); unified "public-interest GEO" frame; two-tier (institution-funded + self-serve) | **UNRESOLVED** | — |

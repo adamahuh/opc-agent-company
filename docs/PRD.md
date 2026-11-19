@@ -123,7 +123,10 @@ TODO: choose which steps are truly built vs. staged in the demo.
 | Risk | Sponsor-overlap (pitching a service like a sponsor's business) | Resolve under Decision B before writing code |
 | Assumption | Solo delivery is credible for a 6-day build | Cut breadth, deepen the loop |
 
-## 10. Open questions to answer in the grilling (this is the PRD's real
+## 9b. Actor & consent model — see `MEMORY.md §3d`. Rescue needs 1
+asset-holder relationship (consent + byline + verification), not a market.
+
+10. Open questions to answer in the grilling (this is the PRD's real
     to-do list)
 
 1. Track 1 vs Track 2 → `SKILL.md §6`.
