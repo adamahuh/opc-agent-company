@@ -30,7 +30,7 @@ tooling is internal; what gets billed is the outcome.
 | Role | Device / account | Why |
 |---|---|---|
 | **Agent orchestration (the product)** | QwenWork — desktop app or browser, logged in as **adamahuh** (the account that also holds the repos) | 20% of the score is visible platform use; parallel tasks, scheduled runs, Skills, files, publishing all need the real product UI in the video |
-| **Demo subject domain** | one cheap domain we own, pointed at a static QwenWork-published site | FR3/FR6 both need a live URL we control; we cannot honestly demo Search Console or IndexNow on a stranger's site |
+| **Demo subject hosting** | **QwenWork Pages (`qw-pages`)** = primary, published by the platform → doubles as the 20% "engine-not-checkbox" evidence; fallback GitHub Pages. **No domain purchased** (founder, 19 Nov) | FR3/FR6 need a live URL we control; verification on a platform-issued subdomain = TBC (10-min test) |
 | **Engines we query by hand** | founder's own browser (ChatGPT / Gemini / Perplexity / AI Overviews) — signed in as a normal user, not a dev harness | A browser answer *is* what a customer's customer sees. Cheapest honest evidence and no API keys to buy for the core beat |
 | **Google's own data** | Search Console + Bing Webmaster Tools + Google Analytics property on our demo domain | The Generative AI performance report (Google's guide, 19 Nov) is the only first-party AI-visibility number we can quote |
 | **This sandbox** | code generation, docs, SERP/page fetches, the audit-report builder | Good for artifacts; cannot log into consumer AI products here |
@@ -139,7 +139,7 @@ are features (audit rules) the product **enforces**, not a policy page:
 | Bing / DuckDuckGo (→Bing index) | direct SERP (curl/manual) | free | **fact** (rank) | rank positions + which sites are cited |
 | Google classic web | manual + Search Console on our own subject | free + account | **fact** | queries + impressions/clicks where we own the site |
 | Google **Generative AI** performance | Search Console report | own-site only | **first-party** | impressions/clicks into AI features for our site (not the customer's, day 1) |
-| **Naver (KR — Korea ≈ 42% vs Google 48% per StatCounter)** | manual KR IP or paid API | **TBC: needs KR number + access**; API availability for 2026 unverified | **TBC** | decide by 20 Nov: cut or proxy |
+| **Naver** (Korea 19 Nov tested): SERP readable anonymously (200, 46 external result links, AI 브리핑 module) BUT `search.naver.com/robots.txt` **disallows all crawlers** → no automated scrape. Site registration = `Search Advisor` = KR account verification (SSN/business); foreigner path **TBC**. API = **TBC**. | no KR identity | **fact (reach) / cut (automation)** | **Verdict:** report Naver/KR as an *advisory gap* for KR-market customers, never a measured surface in the demo. "We can tell you you're invisible on Naver without pretending we can monitor it." |
 | Yandex / Baidu | not needed — outside SG/APAC impact remit; blocked/legal issues | — | **cut** | record that we cut it for focus |
 | **Perplexity API / OpenAI "search" model API** | programmatic re-measurement for L10-scale automation | keys + $ (assumption) | **nice-to-have, D2** | if keys arrive, FR3 auto-reruns; if not, scheduled task = *reminder + scripted browser run*, and that's demo-able too |
 
@@ -164,6 +164,8 @@ is not a weakness, it's the only credible thing in the room.
 | Fictitious subject looks like fiction = weak | Feasibility 25% | Tier A/B real measured layer (CANDIDATES.md) precedes it, so the gap is real on camera |
 | AI engines refuse/empty answers (personalisation, region) | demo stall | 3 recorded runs, pick best; screenshots of both outcomes; never live-run on 11 Dec |
 | Naver/Baidu API access unknown today | feature cut | decide by 20 Nov, don't build the exception |
+| Shared pages namespace blocking our crawlability (root robots.txt outside our control) | after-state quietly fails | test the URL in 10 min at build start; GitHub Pages fallback |
+| Naver automation assumptions | ToS breach + false claims | advisory only (see §6.3 row) |
 | Scaled-content-abuse drift | customer-site ruin + our credibility | lever ceiling per engagement (≤10 assets in v1), hard approval gate, batch log |
 | 5 days total and M1 is novel | missed deadline | M1/M2 = MUST. M6/M7 = packaging. Cut FR5/FR7 if Friday slips |
 
@@ -190,7 +192,11 @@ is not a weakness, it's the only credible thing in the room.
 1. **Hashmeta account access + publish path** (15% of the score, blocking).
 2. **Fictitious subject identity**: trade chosen? (my rec: beadwork, one person + a
    workshop + zero AI-citation — the cleanest, most empathetic profile)
-3. Domain purchase: yes/no, budget (S$15–25). Needed for the after-state.
+3. ~~Domain purchase~~ **RESOLVED 19 Nov: no domain — QwenWork Pages
+   primary (platform-native = evidence), GitHub Pages fallback.** Sub
+   question now: the 10-min verification TBC test (does SC HTML-tag / Bing WMT
+   meta-tag work on the issued subdomain?) — do before we cite any first-party
+   number.
 4. Vertical 3 (society/eldercare/mental health) in or out for the demo? My recommendation:
    in the ICP, out of the demo claims (YMYL gate).
 5. Search Console verification on our own domain — do we verify today so indexing has real

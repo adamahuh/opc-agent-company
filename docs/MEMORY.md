@@ -161,6 +161,49 @@ source citable; Hashmeta 9-factor #9) is a product requirement we should
 *show* in the demo, not quietly drop. Label synthetic; never imply we worked
 for a real named business.
 
+## 3e. Naver / hosting field notes (19 Nov, tested from this sandbox)
+
+**Naver (founder asked: don't you need a Korean SSN?): tested live.**
+
+| What | Result | Class |
+|---|---|---|
+| `www.naver.com` | HTTP 200 (edge IP 23.206.180.176) — served **without** KR origin and without login | **fact** |
+| `search.naver.com/search.naver?query=lacework` | HTTP 200, real SERP: title `lacework : 네이버 검색`, 862 KB, 46 non-Naver external result links, **"AI 브리핑" module present** | **fact** |
+| `m.search.naver.com` | 820 KB from a KR-routed edge (114.111.39.3) | **fact** |
+| `openapi.naver.com` | HTTP 200 | **fact** (root reachable ≠ API usable) |
+
+The **SSN part is a real gate, but not the one you'd think**. Identity is not
+needed to *read* results; it's needed to *register* a site — via
+`Search Advisor`, which requires a Naver account and Korea real-name/business
+verification (`business.naver.com/verify/manage/business/home.html`).
+Foreigner path (passport-based "PASSPORT VERIFICATION" / in-person/foreign
+mobile; Naver's 2024+ travel verification programme exists) — **TBC**, so I'm
+not building on it.
+
+**Naver API:** `developers.naver.com` apps list shows a "Search" service
+(app registration via Naver login) — **TBC** whether new Search subscriptions
+are still open in 2026; a 2026 report claims Naver banned AI use of the Search
+API (secondary source) → we **cannot** rely on Naver programmatic access.
+**Legal:** `search.naver.com/robots.txt` (19 Nov) *disallows every UA in
+`/`*. So automated Naver SERP scraping breaches their robots + ToS;
+**we do not do systematic Naver crawling.** Manual one-off sampling is OK;
+systematic measurement is not.
+
+**Hosting (Q3 resolved without a domain):** default = **`qw-pages` publishes
+the subject site** — QwenWork, platform-native, one-click, files we control.
+This is worth repeating in the demo: *the subject site was published by the
+platform we're being scored on* = the "engine not checkbox" argument, 20%.
+Fallback = GitHub Pages (`<user>.github.io`). Search Console: **no domain
+verification at all** — URL-prefix property via HTML meta tag, GA4/GT. Bing
+WMT: verified via meta tag / file at site root (their own help page
+`bing.com/webmasters/help/verify-website-bd99495b`, "Verify your site") —
+whether these methods work on a platform-issued subdomain = **TBC, 10-minute
+test first build session, do not promise SC/BMT numbers in the demo until it
+works.** New risk logged: **shared hosting namespace** — if the pages host
+root returns a blocking `robots.txt` we cannot control, the site's AI-crawler
+access might get blocked — check this, because it's a hidden blocker of the
+after-state itself.
+
 ## 4. Hackathon facts (hard constraints)
 
 - Build window 17–23 Nov 2026. Deadline **Nov 23 23:59 SGT** (15:59 UTC) = 48h
