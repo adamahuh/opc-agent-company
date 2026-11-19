@@ -186,7 +186,18 @@ CONFIRMED vs KIT-VERIFIED vs PLATFORM-CAP vs USER-INSTALL are deliberately
 kept apart. Per the handover: a blocked runner is an environment limitation,
 not a pass; founder QA is a separate gate we do not pre-mark.
 
-## 10. Companion file
+## 10. Companion files & active agent role
 
 `UPGRADE_SKILL.md` — how to close the remaining rows before the deadline,
 plus the six-day build order and its exit gates.
+
+`MEMORY.md` — persistent founder contract, decision-guide role,
+locked/open decisions, and the decision log. Any new session or agent starts
+here.
+
+### Active standing role (changed 19 Nov — permanent)
+
+For every decision, the agent must present: (1) what it is, (2) how it scores,
+(3) for/against (4) the smallest test, (5) a provisional recommendation
+if asked. Founder's decision is logged, agent's recommendation is separate.
+This replaces passive Q&A for product work. See `docs/MEMORY.md §2`.
