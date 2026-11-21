@@ -21,9 +21,9 @@ docs/EXECUTION.md §3 milestones + **§1d the day-1 hosting checklist** → docs
 older is kept for audit. `resume` on either device = `git pull`, check for the *other*
 device's commits since your last HEAD, then continue from "pending" below.
 
-## 1. Progress (state as of this commit)
+## 1. Progress (state at commit `c1d6808`, planning device)
 
-**Locked decisions D4–D21** (authoritative copy in `MEMORY §6`) — key ones:
+**Locked decisions D4–D23** (authoritative copy in `MEMORY §6`) — key ones:
 
 - **D5** Track 1 (workers, not guardrails) · **D7/D8/D16/D17** service ladder, institution
   buys both tiers, no SaaS/dashboards/multi-tenant · **D6a** "everywhere the answer is
@@ -37,7 +37,7 @@ device's commits since your last HEAD, then continue from "pending" below.
   Pages primary (GH Pages fallback) · **D20–D21** exposure = act, proof = vantage; FR8
   submission module.
 
-**Built (artifacts, no product code yet):** GLOSSARY; EXECUTION M1–M7 + hosting checklist
+**Built (artifacts; no product code yet):** GLOSSARY; EXECUTION M1–M7 + hosting checklist
 + engine access matrix + refusals; PRD (~280 lines) with personas/user stories/weekly flow;
 QUERIES instrument + `data/queries.yaml` (5 subjects, multilingual, ABSENT→MEDIATED→THIN→
 OWNED); HANDOVER set incl. this file; **`rules/` + `runs/` trees created so the refusal list
@@ -56,8 +56,9 @@ shares (Google 91.05% worldwide / SG 92.35; Korea Google 48.48 vs Naver 42.25);
 | # | Pending | Owner | Gate it unlocks |
 |---|---|---|---|
 | P1 | **§1d hosting checklist** (4 items: ~15 min): root-file hosting (IndexNow key / Bing XML / SC meta), head injection, `/sitemap.xml`, **our own `/robots.txt` on the published site** | execution device | M3 publish, FR8, first-party after-state proof, our AI-crawler posture claim |
-| P2 | **M1 audit engine** — read-only pass on the three verified Tier A domains; write `runs/RUN-001-before/`, each record with `evidence: observed` + `proof_level: fetch`; failure → `inconclusive`, never `absent` | execution device | M2/M4/M5, act 1 + act 3 |
-| P3 | **Manual Batch** (founder browser, signed-out, in-country SG): engine answers for `data/queries.yaml` | **founder only** | the four grades' engine rows; act 1 |
+| P2 | **M1 fetch pass — DONE partly, planning device (`runs/RUN-001-before/`, commit `c1d6808`): 3 domains × 4 paths + a UA control re-test.** Findings: **Mokko has strong structured data (`LocalBusiness` + 21-URL sitemap) → drop it as our example**; **Suikoushya has 0 JSON-LD but 4 `hreflang` links**; **beadwork site returns HTTP 500 on `/robots.txt` + `/sitemap.xml`** (homepage 200 under same UA; 500 for browser UA *and* spoofed Googlebot, different error-body sizes). **Remaining:** grade the *answer* surfaces — needs P3 | execution device (continue: `report.py` to render, `diff.py` later) | M2/M4/M5 |
+| P2b | **Decision D23 to confirm in front of you:** make the **beadwork (crawl-guidance-gap)** subject the demo's fixed layer, or the **Suikoushya (structured-data-gap)** one? My pick: beadwork — most different, most checkable, best "not our fault it's invisible" story, but the 500 cause is **unknown and must stay labelled as an observation** | founder | act 1's spine + M2 |
+| P3 | **Manual Batch — the only path to the four grades.** founder browser, signed-out, in SG: run S1 set (7 queries) on ChatGPT/Gemini/Perplexity + Google web + AI Overviews + Bing/DDG, verbatim answer + citation list + screenshot file names, date each | **founder only — this unblocks P2b** | ABSENT/MEDIATED/THIN/OWNED; act 1 |
 | P4 | **Hashmeta connector** — action list + provenance test (below) | founder + organising device | 15% path 2; possibly a *better* FR1 data source |
 | P5 | **The two organiser questions** (one message): (a) where do participants build the *Hashmeta-AI* page? (b) is a recorded end-to-end run accepted for "working live"? | founder | 15% ceiling; demo posture certainty |
 | P6 | Pre-existing-work disclosure **at registration** (D16 silent default = none; confirm) | founder | eligibility clean-up |
@@ -96,3 +97,16 @@ exactly one named task and doesn't widen.
    that's already bitten the planning device three times.
 5. Locked decisions are reopened **only** by the founder. Conflicting evidence → state it and
    stop; don't quietly pick a convenient version.
+
+## 5. Delta since the last `change` (so the other device reads only what's new)
+
+- **First real data exists.** `runs/RUN-001-before/` = 3 domains × 4 paths, `findings.fetch.jsonl`
+  + `followup-user-agent.jsonl` + a README written at evidence-class level.
+- **The subject decision got empirical.** Mokko's structured-data baseline *disproves* "all real
+  trades are invisible" — which makes our honesty stronger and means the fixed layer must be the
+  500 site (crawl-guidance gap) or Suikoushya (no structured data, multilingual). **D23 is yours.**
+- **SKILL S1 can finally say `CONFIRMED`** — fetch-grade extraction + an artifact path, not a plan.
+- **Everything I could *not* do:** no grades (they need engine answers), no publish, no
+  submissions, no connector calls (every pool 401s from this sandbox), no cause for the 500.
+- **Nothing from the other device has appeared on `origin/main` yet** (`git log HEAD..origin/main`
+  empty as of `c1d6808`) — no branch collisions to resolve.
