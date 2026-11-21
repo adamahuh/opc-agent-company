@@ -59,9 +59,15 @@ model says an answer is built from). C is refused: no projected score.
    "claims and sources" panel with an evidence class per line (our handover's
    no-promotion rule made visible — a one-line sentence that no other team can
    show because it is a working contract, not a feature);
-5. **P4 publish** — the approval gate fires before outbound; click release;
-   QwenWork Pages URL goes live; sitemap/IndexNow attempt logged as a real
-   attempt. Say: "We don't claim it ranks today. That's the honest part"  (D10-C refusal);
+5. **P4 publish + submit (FR8)** — the approval gate fires before outbound; click release;
+   QwenWork Pages URL goes live. Then show the **submission** act: IndexNow ping to the
+   participating engines (**Bing, Naver, Seznam.cz, Yandex, Yep** — indexnow.org, verified
+   19 Nov) + sitemap submit, each logged as attempt→outcome.
+   **Say this:** "Exposure is an *act* we take — one Bing-side submission covers the ~6.6%
+   of queries Bing answers directly, plus DuckDuckGo, which states its traditional links
+   are largely sourced from Bing. *Proof* of a ranking change depends on whose site it is:
+   on ours we read our own webmaster console, so the crawl status you see is first-party,
+   not a guess." Say: "We don't claim it ranks today. That's the honest part"  (D10-C refusal);
 6. **P5** — scheduled weekly engine recheck set up. *Beat B:* then run one
    engine with web access on the published page and show it answering from that
    source — attribution, labelled as the retrieval-level result, not a global
@@ -108,7 +114,8 @@ Hold the page two beats. End.
 - [ ] Asset creation: claim table + byline/synthetic label (P3)
 - [ ] Approval gate blocking, then founder releasing (FR4 — mandatory beat)
 - [ ] QwenWork Pages publish + live URL in a browser (P4)
-- [ ] IndexNow/recrawl attempt outcome logged (success or blocked, both OK)
+- [ ] IndexNow ping + sitemap submit, outcome logged (success *or* blocked, both OK) — FR8
+- [ ] one webmaster-console crawl/index status row for our own subject page (first-party proof)
 - [ ] Scheduled weekly re-measure in the platform UI (D10-A beat)
 - [ ] Retrieval-level: engine with web access answering from our page (D10-B)
 - [ ] Diff table with the three honesty columns (P5)
