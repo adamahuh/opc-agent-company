@@ -14,7 +14,7 @@ screenshot reference. Nothing scored without all four.
 | ChatGPT, Gemini, Perplexity | logged-in personal browser, founder runs the clicks | free, **manual batch** |
 | Bing / DuckDuckGo | browser | free (DDG ~0.66% worldwide; Bing/Copilot "higher intent/older/wealthier" claims **unverified — hypothesis only**) |
 | YouTube/Instagram/TikTok search | browser | free — *the real discovery channel for craft demos* |
-| Naver | browser manual only | `robots.txt` disallows all crawlers → **never automated**, advisory gap only |
+| Naver | browser manual only | **both** hosts disallow every crawler; `search.naver.com` additionally bans AI retrieval by name → **never automated**, advisory gap only. Verbatim evidence in §"Naver robots evidence" |
 
 ## S1 — beadwork practitioner (synthetic subject, modelled on `nyonyaneedlework.com`)
 
@@ -73,6 +73,27 @@ en: how do I find a trustworthy home care provider Singapore   # information-onl
 S5 never produces content that makes a health, legal or financial claim — the
 audit checks *whether an authoritative source answers*, not writes it. Full
 rationale in `EXECUTION.md §6.2` and the refusal list.
+
+## Naver robots evidence (verified 19 Nov, this sandbox, `curl` with our own user-agent)
+
+Two files fetched, both retained as measurement, quoted exactly as returned:
+
+| Host | HTTP | Bytes | Content |
+|---|---|---|---|
+| `www.naver.com/robots.txt` | 200 | 91 | `User-agent: *` / `Disallow: /` / `Allow : /$` |
+| `search.naver.com/robots.txt` | 200 | 474 | `User-agent: *` / `Disallow: /` **plus** the header comment *"BOT ACCESS FOR THE PURPOSES OF AI TRAINING AND RETRIEVAL-AUGMENTED GENERATION (RAG) IS STRICTLY PROHIBITED."* then explicit `User-agent: GPTBot` / `Disallow: /` and `User-agent: OAI-SearchBot` / `Disallow: /` |
+
+**What this is (plain):** `robots.txt` is a file a site publishes to tell automated
+agents which paths they may request — **"crawl directives"**, obeyed by well-behaved
+bots. **What it means for us:** Naver forbids crawling site-wide *and* forbids AI
+retrieval specifically, so any automated Naver measurement we ran would be against the
+rule, not a technical limit. **This is external corroboration of our own refusal standard
+(D14)** — a search operator drawing a hard line at AI harvesting is exactly the line we
+already refuse to blur. Route evidence, same day: `www.naver.com` resolved to
+`23.41.37.16` and `search.naver.com` to `114.111.39.3` — two different edges, one of
+which looks Korean-located. **Fact:** both from *this sandbox's* egress; inference: the
+sandbox is not on a Singapore residential path; we have not proven what an SG-residential
+signed-out user is served.
 
 ## Methodological limits (added 19 Nov — do not skip these when we claim anything)
 
