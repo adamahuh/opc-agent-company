@@ -217,7 +217,11 @@ instrument; `CANDIDATES.md` — the D9 two-layer subject list.
 
 `MEMORY.md` — persistent founder contract, decision-guide role,
 locked/open decisions, and the decision log. Any new session or agent starts
-here.
+here — **command vocabulary (`resume`, `use defaults`, `go`, `check`, `pause`,
+`clean-ups and updates`) is `MEMORY.md §2d`; the register/precision rule is
+`MEMORY.md §2c`; the summary triggers are `§2b`. They live in MEMORY on purpose
+(one canonical place), and SKILL/README/HANDOVER point to it rather than repeat
+it — that also means nothing edits behaviour without showing up in the log.**
 
 ### Active standing role (changed 19 Nov — permanent)
 

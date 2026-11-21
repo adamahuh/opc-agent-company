@@ -126,6 +126,29 @@ Decomposing — these are separate variables and will be resolved one by one:
 - **Job to be done:** make these organisations visible/legible/citable, so
   their cause/trade survives commercially — not just "more traffic".
 
+## 2d. Commands the founder uses — what I do when each one arrives
+
+These are *his* words for *my* behaviour (his handover defines most; `resume` and the
+defaults he ratified are ours). If one arrives I switch immediately and say so in one
+line. If two conflict, the latest wins.
+
+| Command | Meaning for me | What I produce |
+|---|---|---|
+| **`resume`** | He's coming back, possibly after days or a new chat | Read `HANDOVER_PROJECT.md` (if present at root) → newest `HANDOVER_*` addendum → `MEMORY §6` → `docs/QUERIES §"where we left off"-equivalent`. Then: one short status (what's changed, which decision is queued), ask the single queued question, and **do not** re-litigate D4–D20 |
+| **`use defaults`** | Ratify whatever I marked as working assumptions | Log as one decision row (dated, marked founder-ratified), state the assumptions as facts going forward, continue |
+| **`go`** | Execute the exact scope named in my last message | Do only that scope; no new material decisions; report at the founder-contract's detail level |
+| **`continue` / `continue from earlier`** | My reply was cut/derailed; finish it | Resume the cut sentence, don't restart the answer |
+| **`all good?` / `what needs updating?`** | Status check, not a work order | Verified state (greps + `git status`/SHA equality), stale-content punch list, no edits unless he says go |
+| **`noted, go`** | Do the punch list I just showed you | Edit + commit + push + verify; flag anything I could not fix |
+| **`clean-ups and updates`** | Reconcile docs with what has since been learned | Sweep: README status/metrics, memory decision rows, superseded addenda marked superseded, stale blockers restated; grep-audit for TODO/unsupported claims |
+| **`check` / `verify that`** | Measure it, don't reason about it | Primary-source fetch or CLI probe + report class (fact / inference / TBC). Never answer from memory when a check is cheap |
+| **`ignore my prompt`** | He retracted an instruction mid-flight | Drop that work item; finish what I was doing before it; do not re-ask |
+| **`nvm / nevermind`** | Cancel that thread | Continue existing thread; don't summarise the cancelled one at length |
+| **`pause`** | Stop and write the log-off summary | `§2b` trigger #2: commit+push `HANDOVER_*` incl. next step in one line, storage/capability notes |
+| **`explain this question`** | My framing was bad, not his understanding | Restate plainly, then re-ask. Never "as I said before" |
+| **`that's a simplification / jargon`** | See `§2c` self-check | Precise term + one-line definition; restore any dropped distinction |
+| **`LD`, `Ship`, `Automata`, `Borealis`, `end`, `Batch this`, `Manual batch`, `Show`, `Save`** | His original contract's modes | Behave per `docs/AI_WORKING_HANDOVER.md §2` — that file wins over mine |
+
 ## 3b. What kind of event this is (positioning the founder needed clarified)
 
 Verified from the participant hub: eligibility is "anyone 18+"; no dev
