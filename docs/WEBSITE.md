@@ -4,13 +4,24 @@
 you'd send a customer."* It is a sponsor requirement (Hashmeta AI), so build
 it **with Hashmeta AI** — not by hand, and not on another builder.
 
-**Status 19 Nov: blocked** — founder is checking account/tooling access.
-Open item Q1 in `MEMORY.md §8` asks whether publishing must *also* happen
-there; until answered we satisfy both readings by making the page
-Hashmeta-generated *and* Hashmeta-hosted. Fallback if nothing works by
-21 Nov: ship the most customer-grade page we can, tell the judges plainly it
-wasn't possible to use the sponsor's tool, and put the live URL in the form.
-15% at risk; nothing else.
+**Status 19 Nov, updated after the connector check:** Enabled ✓, Authorization ✓,
+**but no website-builder action** — so the connector cannot produce this page. The
+15% now routes through four ranked paths:
+
+| # | Path | Cost | What the 15% actually gets |
+|---|---|---|---|
+| 1 | **One organiser question:** where do participants build the Hashmeta-AI page? | 1 message, already queued in `MEMORY §8` | the answer we're otherwise guessing at |
+| 2 | **Hashmeta web console directly** — their site markets an **AI CMS** (publish) product | founder login, ~30–45 min once access exists | a page generated *by their tool*, ideal hosted by them = full credit |
+| 3 | **Their free tools as the proof layer** (AI Visibility Checker, Schema Check, AI Crawler Check) feeding a QwenWork Pages build, labelled *"built to Hashmeta's CITE methodology"* | ~40 min | defensible, visible work — but **not literally "built with Hashmeta AI"**. I'd expect partial credit, so I won't call this the plan, only the bridge |
+| 4 | **Last resort (22 Nov):** ship the most customer-grade page possible + state in the submission text that no participant build path was reachable from the connector | 0 | we lose the points we were going to lose, **without the far worse risk of a judge discovering a claim we couldn't support** |
+
+Order of operations: **1 + 2 are the real plan** and both sit outside this sandbox —
+which is why the copy below was written *now*: on whichever path wins, the build is
+transcription time, not authorship time.
+
+Still open on the connector: if any exposed action is an **AI-visibility / citation
+read**, that would *upgrade FR1* (partner data beats my fetches for the before-state) —
+worth one more line in that same organiser message.
 
 **Rule source:** "15% Website built with Hashmeta AI" + "15% Demo
 Presentation" are separate categories. The website does not get credit for
