@@ -74,6 +74,30 @@ S5 never produces content that makes a health, legal or financial claim — the
 audit checks *whether an authoritative source answers*, not writes it. Full
 rationale in `EXECUTION.md §6.2` and the refusal list.
 
+## Methodological limits (added 19 Nov — do not skip these when we claim anything)
+
+1. **Geo/personalisation.** This sandbox does **not** egress as Singapore-resident,
+   signed-out traffic. Anything fetched from here is a *fetch-grade* observation about
+   the public page (does it exist, is it crawlable, what does it say), not a claim about
+   what an SG user sees on a results page or in an AI answer. Hence: engine rows carry
+   `proof_level: browser` and come from the founder's Manual Batch; fetch rows carry
+   `proof_level: fetch` and are never presented as "the engine said." Mixing those two
+   columns would make our before-state unfalsifiable, so the distinction is load-bearing.
+2. **Absent ≠ failed to load.** A consent wall, captcha, redirect trap, timeout or
+   non-200 response is `inconclusive`, logged as such. Only a successful, retained fetch
+   that shows no citation/rank supports **ABSENT**. Otherwise we would be inventing
+   invisibility from our own crawler's failures (contract: a blocked runner is an
+   environment limit, not a pass).
+3. **Politeness & identity.** One request per URL, our own user-agent (never
+   masquerading as Googlebot/Bingbot), honour each audited site's `robots.txt`
+   (**the file a site publishes to tell automated agents which paths they may
+   request**), no authenticated or write calls. We audit robots files as data; we don't
+   act like a search engine.
+4. **Scope honesty.** A read-only pass measures surfaces reachable from public fetch:
+   which entity listings exist (business directories, institutional pages), page-level
+   structure, crawlability, schema validity, multilingual coverage. It cannot see
+   ranking in Google's web index, logged-in state, AI Overviews, or any chat-engine answer
+
 ## Scoring
 
 | grade | meaning | evidence |
