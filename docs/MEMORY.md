@@ -149,6 +149,20 @@ line. If two conflict, the latest wins.
 | **`that's a simplification / jargon`** | See `§2c` self-check | Precise term + one-line definition; restore any dropped distinction |
 | **`LD`, `Ship`, `Automata`, `Borealis`, `end`, `Batch this`, `Manual batch`, `Show`, `Save`** | His original contract's modes | Behave per `docs/AI_WORKING_HANDOVER.md §2` — that file wins over mine |
 
+## 3a-connector | Hashmeta connector, verified state (19 Nov, founder checked in-app; agent could not re-verify)
+
+| Fact | Consequence |
+|---|---|
+| Connector tile exists, **Enabled = green, Authorization = green** | Account is linked. Not a capability claim |
+| **"There is no website builder action"** (founder's read of the action list) | **M6 (Hashmeta site, 15%) cannot run through this connector.** The 15% needs either the Hashmeta web console directly, or the builder is on a different surface |
+| My session could not see the tool catalog (`qwenwork extension resources list` → `HTTP 401 UNAUTHENTICATED`, twice, org + public pools) | **Environment limit, not a broken connection.** So I cannot enumerate what the connector *does* expose — and I won't guess |
+| Their site markets **AI CMS** (publish) + **AI Visibility** (measure/citations) as products | The *measurement* half is what could beat our Manual Batch. If any exposed action returns citation/visibility data, that upgrades FR1 from "my fetch" to "the partner's own data" |
+
+**Two questions to send (one line each, organiser chat):** (a) which app surface do participants use to
+build the Hashmeta-AI website for the 15% criterion? (b) does the connector expose an AI-visibility /
+citation read action, and if so what's it called? Until (b) is answered, Manual Batch stays the primary
+before-state source (unchanged plan).
+
 ## 3b. What kind of event this is (positioning the founder needed clarified)
 
 Verified from the participant hub: eligibility is "anyone 18+"; no dev

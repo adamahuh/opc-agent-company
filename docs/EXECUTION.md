@@ -25,6 +25,32 @@ Product = the audit pipeline, the rescue assets, the recurring re-measure diff, 
 plain-language briefing the owner can actually read. **Not** a dashboard SaaS (D7). The
 tooling is internal; what gets billed is the outcome.
 
+## 1d. Day-1 checklist, four items, ~15 min total — hosting before anything else
+
+**Why (verified 19 Nov at indexnow.org FAQ):** IndexNow requires generating **a key file
+placed on our own site root**: *"implement it manually by generating a key file, verifying
+your website, and submitting URLs using the IndexNow API."* A key file at the root is the
+same kind of artifact as Search Console's HTML verification tag and Bing's XML file — so
+**one question covers all four items.**
+
+- [ ] **(1) Does QwenWork Pages let arbitrary public HTML/TXT files resolve at the site
+      root?** YES → FR8, M1/M3, Bing + SC verification all work, and my earlier "TBC on
+      platform subdomains" risk is **dissolved** (not a Pages limitation after all, just
+      an untested one).
+- [ ] **(2) Does the head accept our own `<meta name="google-site-verification">` /
+      Bing meta tag?** (head injection and root-file hosting are separable — one can pass
+      while the other fails.)
+- [ ] **(3) Is `/sitemap.xml` served/allowed** — needed for the publish step and for the
+      crawl/robots row in `run/` evidence.
+- [ ] **(4) Does the host let us ship a real `robots.txt` for our own site**, or is it
+      fixed platform-wide? If we can't own it, **we can't demonstrate our own D14 refusal
+      posture** ("allow AI crawlers on your site"), which is a claim we intend to make in
+      the pitch — that's not cosmetic, it's one of our differentiators.
+- Each item, answered *observed* with the URL/status evidence in `runs/RUN-000-hosting/`.
+  **If any fails:** GitHub Pages fallback per D15 (which does allow root files + head edits
+  by definition) — the fallback costs QwenWork Pages' platform-optics value, and we weigh
+  that against the 20% evidence, not in the abstract.
+
 ## 2. Where the build runs (device + account decisions, made explicit)
 
 | Role | Device / account | Why |
