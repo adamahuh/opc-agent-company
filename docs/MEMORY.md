@@ -134,7 +134,8 @@ line. If two conflict, the latest wins.
 
 | Command | Meaning for me | What I produce |
 |---|---|---|
-| **`resume`** | He's coming back, possibly after days or a new chat | Read `HANDOVER_PROJECT.md` (if present at root) → newest `HANDOVER_*` addendum → `MEMORY §6` → `docs/QUERIES §"where we left off"-equivalent`. Then: one short status (what's changed, which decision is queued), ask the single queued question, and **do not** re-litigate D4–D20 |
+| **`resume`** (founder's own definition, 19 Nov — replaces mine) | *check the github repo / handover for any updated materials, and resume the progress of the work* | `git pull`, list what the **other device** committed since my last HEAD, read `docs/HANDOVER_CROSS_DEVICE.md` (progress + pending P1–P8) and `MEMORY §6`, then 3-line status + **start the top unblocked pending item**; ask only when that item is genuinely blocked |
+| **`change`** (founder's definition, 19 Nov) | *update the handover / GitHub repo with current progress and pending items for the other QwenWork on my other device to resume this work; if there are multiple agents, the other device creates them and replicates the same exact responsibilities — project context only* | Rewrite `docs/HANDOVER_CROSS_DEVICE.md` (dated, device named): progress incl. commit SHAs, pending table with owners+gates, **§3 sub-agent responsibility replication**, §4 durability rules; commit, **push, verify remote SHA == local HEAD**. Fan-out rule: sub-agents inherit the full charter in **this project only**, never a soft mandate, never personal tasks |
 | **`use defaults`** | Ratify whatever I marked as working assumptions | Log as one decision row (dated, marked founder-ratified), state the assumptions as facts going forward, continue |
 | **`go`** | Execute the exact scope named in my last message | Do only that scope; no new material decisions; report at the founder-contract's detail level |
 | **`continue` / `continue from earlier`** | My reply was cut/derailed; finish it | Resume the cut sentence, don't restart the answer |
@@ -157,6 +158,16 @@ line. If two conflict, the latest wins.
 | **"There is no website builder action"** (founder's read of the action list) | **M6 (Hashmeta site, 15%) cannot run through this connector.** The 15% needs either the Hashmeta web console directly, or the builder is on a different surface |
 | My session could not see the tool catalog (`qwenwork extension resources list` → `HTTP 401 UNAUTHENTICATED`, twice, org + public pools) | **Environment limit, not a broken connection.** So I cannot enumerate what the connector *does* expose — and I won't guess |
 | Their site markets **AI CMS** (publish) + **AI Visibility** (measure/citations) as products | The *measurement* half is what could beat our Manual Batch. If any exposed action returns citation/visibility data, that upgrades FR1 from "my fetch" to "the partner's own data" |
+
+**Refinement 19 Nov (founder): the action list sits under `custom` and exposes
+"keywords / commands"** — read-shaped data verbs, no publish action, which is consistent
+with the connector having no site builder.
+
+| Consequence | Why | Class |
+|---|---|---|
+| The 15% page cannot be built through this tile; `WEBSITE.md` paths 1–2 (console / organiser answer) stay the plan | Custom tiles are user/org-defined **endpoint definitions**, not the vendor's product surface — claiming "built with Hashmeta AI" off a wrapper is unverifiable and possibly against their ToS | **inference** from his check + our failed catalog reads |
+| **A keyword read could upgrade FR1 more than the website moves us.** `data/queries.yaml` is human-guessed phrasing; sourced keyword lists/volumes per market + language (EN / 中文 / Malay / Tamil / JA) turn plausible queries into evidence-backed selection — which is also the multilingual edge we claim | better source → better data; touches Feasibility, QwenWork-use and the Innovation story, not one criterion | **assumption** until action names/schema are seen |
+| So the useful ask changes shape: not "does it build sites" but **"what exactly do those keyword commands return"** (volumes? who ranks? AI answers? which market/language?) | Determines whether M1 consumes partner data (stronger) or stays fetch + Manual Batch (plenty good enough) | open |
 
 **Two questions to send (one line each, organiser chat):** (a) which app surface do participants use to
 build the Hashmeta-AI website for the 15% criterion? (b) does the connector expose an AI-visibility /

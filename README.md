@@ -34,6 +34,7 @@ AI engines and search actually give** — measured, then fixed, then re-measured
 | 5 | `docs/SKILL.md` + `docs/CANDIDATES.md` | Skill-status ledger vs `rules/`-backed claims, and real shortlist (verified own-sites) we use for the "before" evidence |
 | 6 | `docs/QUERIES.md` → `data/queries.yaml` | Instrument spec + the exact queries we run. Nothing enters the video without all four evidence types |
 | 7 | `docs/HANDOVER_2026-11-19.md` | Chronological session log — see the last addendum for where we paused |
+| 8 | **`docs/HANDOVER_CROSS_DEVICE.md`** | Device-to-device handover (founder's `change` / `resume` commands): progress + pending P1–P8 with owners, the **sub-agent responsibility-replication rule** (project context only), and the durability/honesty rules the other device must keep |
 
 `docs/{BIZ_MODEL,BATCH,DEMO_SCRIPT,WEBSITE}.md` were filled from D5–D15 in the
 19 Nov doc round (`HANDOVER addendum 5`). Their open holes are **unfilled on
