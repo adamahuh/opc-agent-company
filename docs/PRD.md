@@ -73,6 +73,10 @@ engagement viable at all.
 "user personas and user stories" and "user flows" among the core sections;
 ours had neither — added here on purpose, in that guide's plain style).
 
+*(Personas below are** illustrative composites **— built from the decision record
+and typical institutional/practitioner roles, NOT from interviews or researched data, and
+they must never be presented as user evidence. Their purpose is to make FRs testable.)*
+
 | Persona | Who they really are | What they care about | What they don't have |
 |---|---|---|---|
 | **Ms Lim — programme officer** | Works at a museum / arts council / heritage programme; owns a preservation portfolio (e.g. 22 traditional trades under a grant) | Proof for the grant report, nothing embarrassing published wrong, one clean thing to forward to her director | Time, SEO knowledge, budget for a full agency |

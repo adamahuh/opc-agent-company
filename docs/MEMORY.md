@@ -104,6 +104,14 @@ technical vocabulary. Apply:
   problem, not the reader. Long answers are welcome; unexplained terms are not.
 - Keep `docs/GLOSSARY.md` next to the work so "explain it" has one place to go.
 
+**Register correction (founder, 19 Nov, after I over-corrected):** use the **precise
+technical term**, then define it once inline in plain words. Simplifying *vocabulary* is
+right; simplifying *the claim* is not. Never trade away a distinction to make a sentence
+friendlier — when a term has to be softened for the sentence to land, the sentence is
+wrong, not the term. Two-part self-check now: (a) glossary term appears undeclared →
+define it; (b) a simplification drops a distinction that changes what we can claim →
+restore the technical version and define it.
+
 ## 3. Product direction (founder-stated, 19 Nov)
 
 > An SEO tool that serves socially driven businesses — those rejuvenating the
