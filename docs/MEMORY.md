@@ -95,6 +95,14 @@ technical vocabulary. Apply:
   premature.
 - State plainly what we do **not** know and what would cost little to find
   out. No hedging, no jargon cover.
+- **Self-check (added 19 Nov after founder flagged jargon creep):** before
+  sending, scan my own draft for a term from the glossary list (SERP,
+  crawlability, robots.txt, schema, IndexNow, YMYL, E-E-A-T, TBC, proxy,
+  ABSENT/MEDIATED/THIN/OWNED, ledger, LD/Ship/Automata). Each one gets a plain
+  definition inline the first time it appears in a message, or gets replaced.
+  If a sentence needs a definition to be understood, the sentence was the
+  problem, not the reader. Long answers are welcome; unexplained terms are not.
+- Keep `docs/GLOSSARY.md` next to the work so "explain it" has one place to go.
 
 ## 3. Product direction (founder-stated, 19 Nov)
 
