@@ -52,6 +52,21 @@ subjects:
       - {q: "disability arts studio Singapore", intent: verify}
       - {q: "migrant workers community centre Singapore support", intent: verify}
       - {q: "how do I find a trustworthy home care provider Singapore", intent: information_only}
+limitations:
+  geo_sampling: "sandbox egress is NOT Singapore signed-out residential traffic; a SERP or
+    answer fetched from here is a fetch-grade observation about a public page, not a claim
+    about what an SG user sees. Engine-answer rows require proof_level: browser (founder
+    Manual Batch, in-country); fetch rows must never be presented as 'the engine said'."
+  failure_modes: "consent wall / captcha / redirect trap / timeout / non-200 => grade
+    inconclusive with proof_level: fetch. Only a retained successful fetch showing no
+    citation or rank supports ABSENT. A blocked runner is an environment limit, not a pass."
+  politeness: "one request per URL; our own user-agent (never masquerading as Googlebot or
+    Bingbot); honour each audited site's robots.txt; no authenticated or write calls in
+    read-only passes. We read robots.txt as evidence, we do not act as a search engine."
+  read_only_scope: "can measure: page existence/status, crawlability signals, sitemap &
+    robots posture, structured-data validity, entity/listing presence, hreflang & language
+    coverage, on-page claims needing citations. Cannot measure: Google/Bing rank on a live
+    personalised SERP, logged-in AI answers, AI Overviews, or any chat-engine response."
 measure:
   primary: "cited_share_of_answer  (sources where host == subject domain) / N"
   secondary: [serp_rank_position, mediated_citation_count, answer_excerpt_similarity]
