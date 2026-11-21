@@ -3,8 +3,8 @@
 **One-Person Company Hackathon 2026 · QwenWork × Hashmeta AI · Track 1**
 Build a company of one, run by your agents — and show it in a 3-minute demo.
 
-**Status:** `PLANNED — build starts day 1` · decisions D1–D15 locked, zero lines of
-product code executed yet · submission deadline **23 Nov 2026 23:59 SGT**
+**Status:** `BUILD-PREP` · decisions D1–D20 · **no product code executed yet** (everything
+"run" so far is a logged read-only web lookup) · submission deadline **23 Nov 2026 23:59 SGT**
 (internal target: 21 Nov)
 
 ## The one-liner
@@ -63,7 +63,10 @@ docs/    the paper trail a judge can read in one tab
 | 25% Feasibility & Viability | Buyer identity, price, marginal cost, first-dollar path | `BIZ_MODEL.md`; credits per run from `runs/` logs |
 | 20% QwenWork platform | QwenWork runs the whole loop *and publishes the subject site* | task/parallel runs, scheduled briefing, published Pages URL, approval gate shown |
 | 15% Demo | 2:50 recording, D10 posture A+B: before → build → publish → re-measure → briefing | `DEMO_SCRIPT.md` + YouTube link |
-| 15% Hashmeta website | Live, customer-grade page built with Hashmeta AI | blocked on account access — see open items |
+| 15% Hashmeta website | Live, customer-grade page built with Hashmeta AI. Connector =
+**Enabled ✓ / Authorization ✓ / no website-builder action**, so the page routes via
+organiser question or Hashmeta console — see `WEBSITE.md` "paths" | **open** — not dropped,
+not faked |
 
 ## Hard submission checklist
 
