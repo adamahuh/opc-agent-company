@@ -229,6 +229,10 @@ never substitute silently), stop-and-ask triggers, the founder-contract report f
 (incl. the mandatory "what remains unproven" line), milestone table + cut line, and
 §8 known gaps (organiser answers, Hashmeta access, Pages verification TBC, no API keys).
 Durability facts are in §0 because `/tmp` wipes bit us twice this session.
+**Workspace relocation (19 Nov):** the project now has a **workspace-root**
+orientation doc — `HANDOVER_PROJECT.md` — covering canonical-vs-copy paths, sandbox
+durability facts, the open list and the clock. If work moves folders, that file travels
+with the clones and is the first thing the next chat should read.
 **Note:** Multi-Agent mode has no docs entry and the founder could not find the toggle;
 treat parallel sub-sessions as unavailable unless *he* confirms otherwise.
 

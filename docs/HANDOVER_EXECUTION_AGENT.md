@@ -29,6 +29,11 @@ persistent path, commit+push frequently, and never treat a local copy as the onl
 `main...origin/main` with no ahead marker **and** the remote commit equals local `HEAD`.
 Check, then claim.
 
+**If you opened this from a moved folder:** a workspace-root `HANDOVER_PROJECT.md` may
+exist outside the repo — it lists canonical vs mirror paths and the reliability notes.
+`output/*.md` copies are **not** the docs of record: if a rule below and a mirror
+disagree, GitHub wins and the mirror is stale.
+
 ## 1. Locked — do not reopen silently
 
 | Ref | Decision |
