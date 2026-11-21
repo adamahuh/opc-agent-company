@@ -66,6 +66,48 @@ refusal list in `EXECUTION §6.2` is economically impossible to honour at
 agency cost. Only agent delivery makes an honest, low-volume, high-rigour
 engagement viable at all.
 
+## 2b. Personas, user stories and the weekly flow
+
+**Standard check (19 Nov):** a PRD normally names *who* uses the product and
+*what they're trying to do*, in their own words (Figma's PRD guide lists
+"user personas and user stories" and "user flows" among the core sections;
+ours had neither — added here on purpose, in that guide's plain style).
+
+| Persona | Who they really are | What they care about | What they don't have |
+|---|---|---|---|
+| **Ms Lim — programme officer** | Works at a museum / arts council / heritage programme; owns a preservation portfolio (e.g. 22 traditional trades under a grant) | Proof for the grant report, nothing embarrassing published wrong, one clean thing to forward to her director | Time, SEO knowledge, budget for a full agency |
+| **Mr Rahman — custodian** | A sole practitioner keeping a vanishing trade alive (beadwork, weaving, joinery, restoration); sells pieces and workshop places | Bookings, apprentices, being found by the right buyer, not being described wrongly | No marketing staff; an agency can't cost this out for him |
+| **You — the agency** | One person running the whole company on QwenWork agents + your judgment | Repeating a fixed method, defensible evidence, low cost per client | A team. Which is the point |
+
+**User stories (plain "as a… I want… so that…" format):**
+
+1. As **Ms Lim**, I want to see which trades in my portfolio an AI assistant can
+   and cannot find, with dated screenshots, **so that** my grant report shows a
+   gap I fixed instead of a claim I made up.
+2. As **Mr Rahman**, I want one clear page that explains my craft in the words
+   people actually search — in English *and* my community's languages — **so
+   that** the answer names me, not a hobby blog.
+3. As **the agency**, I want every finding and asset to carry its own evidence
+   class (what was measured vs. what was guessed) and a record of who approved
+   it outbound — **so that** a buyer with a reputation can trust the work and I
+   can re-sell the method next quarter.
+
+**The week as the owner experiences it (user flow):**
+
+1. **Monday** the agent runs the same fixed questions on everything you watch
+   → nothing you do.
+2. Same afternoon you get a **one-page brief**: what changed, what the agent
+   did, what's blocked waiting on you. No dashboard, no login, readable in
+   five minutes at your desk.
+3. Anything going out to the public sits in a folder **until you click
+   approve** that week — the gate is deliberate, not an oversight.
+4. At reporting time (quarterly or grant deadline), the brief history for the
+   period becomes the evidence pack. **You were invisible → we shipped this →
+   here's what the engines said before and after.**
+
+> Note that the flow above *is* the pitch for the annual account: it repeats
+> without you, and it always reports in your language, not ours.
+
 ## 3. Product thesis (the submission form's one-sentence description)
 
 Working draft v1 (names still working names — D12):
@@ -136,6 +178,12 @@ Both pending the D12 positioning pass.
 - Backlink outreach automation, crawl-audit parity with Ahrefs, paid ads,
   multi-tenant SaaS accounts/billing/dashboard, real customer onboarding,
   SOC2-ish compliance, mobile app.
+- **Pointer, not duplication (PRD-standard "release criteria")**: what
+  "done, accepted and submitted" means lives in `opc-hackathon-info/CHECKLIST.md`
+  and the `README.md` submission checklist; this PRD defines the product, the
+  checklist defines release. Keep them split so a judge reading the PRD isn't
+  handed a task list.
+
 - Domain purchase. Multi-tenant accounts, SaaS dashboards, keyword databases.
   Paid ads, link marketplaces, review solicitation (FR7 refusal). Competitor or
   SERP scraping at scale. Naver *automation* (their robots.txt disallows
