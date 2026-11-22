@@ -38,7 +38,7 @@ Notes live in the info repo at `AVEPOINT_STARTER_KIT.md`. Kit contents are
 ## 1b. Two numbering systems, on purpose (reconciled 19 Nov after Track 1 locked)
 
 | System | Where | What it is |
-|---|---|---|
+|---|---|
 | **S0–S9** (this file, §2) | here | *Platform evidence rows*: which QwenWork capability does the real work, its mode gate, its artifact. Scores the 20% |
 | **P1→P5** / **M1–M7** | `BATCH.md §2`, `EXECUTION.md §3` | The product pipeline (measure/grade/author/publish/re-measure) and the build order |
 
@@ -79,10 +79,34 @@ that is the founder contract, not tidiness.
 | S3 | Score outputs for policy violations | `oversight` agent + starter-kit `rules/policy.md/json` (19 rules, ALLOW/APPROVE/NEVER) | KIT-VERIFIED | chained from S1 | LD-ok | none | rule id, severity, snippet, decision | 40 s |
 | S4 | Block or escalate in real time | approval-gate hook | PLATFORM-CAP (platform behaviour documented; our gate untested) | on risky action at S2 | **blocks → Ship** | sends request to founder | gate + response window | 50 s (core demo beat) |
 | S5 | Daily plain-language briefing to the owner | QwenWork scheduled task via scheduler primitive | PLATFORM-CAP | scheduled | Automata | none (internal) | job id, inputs, produced doc, timestamp | 60 s |
-| S6 | Author rescue assets + **publish the synthetic subject site** | `asset_agent`/`index_agent` + platform output formats + **QwenWork Pages** (D15, chosen over GH Pages = "engine not checkbox" evidence; ≤10 assets ceiling FR7) | PLATFORM-CAP (not exercised yet) | **Ship** (publishes) | publish to external URL | URL, timestamp, IndexNow/recrawl attempt (success *or blocked*, both logged), ceiling check | 30 s, incl. the approval gate firing |
+| S6 | Author rescue assets + **publish the synthetic subject site** | `asset_agent`/`index_agent` + platform output formats + **QwenWork Pages** (D15, chosen over GH Pages = "engine not checkbox" evidence; ≤10 assets ceiling FR7) | **CONFIRMED for the publishing primitive** (21–22 Nov: `runs/RUN-003-hosting` — `/`, `robots.txt`, `sitemap.xml` all HTTP 200 at `y633cekp.qwenwork.page`, V2→V3→V4 redeploys clean). **Still PLATFORM-CAP for rescue assets** — no E2 pack authored yet | **Ship** (publishes) | publish to external URL | URL, timestamp, IndexNow/recrawl attempt (success *or blocked*, both logged), ceiling check | 30 s, incl. the approval gate firing |
+| S6b | **Build and ship the agency site with the sponsor's own AI** (the 15% criterion) | **Hashmeta connector** — `create_site` → analyze → `plan_site_pages` → `generate_site` → `deploy_site`, then `create_task_from_text` edits, `get_publish_status` → `publish_changes` | **CONFIRMED** (21–22 Nov, live at `embold-r-ai-visibility.geo.hashmeta.tech`, 3 pages; generation ~8 cr, cleanup 6.7 cr, privacy rewrite 7.1 cr, redesign 19.9 cr; one 30-day trial licence consumed). **This retires the 19 Nov "no website builder action" finding and the sandbox 401 — both were environment limits, not product limits** | **Ship** (publishes) | publish to external URL | task ids, step counts, credit spend per task, deploy receipt, live-URL verification | 30 s: the sponsor's AI building our page, for real |
+| S6c | **Measure AI/search visibility from the platform side** | Hashmeta `get_site_traffic` (incl. **AI-bot detection**), `get_analytics_connections`, `get_search_console_data`, `get_bing_data`, `list_site_reports` | **CONFIRMED for first-party traffic + AI-bot logging** (`runs/RUN-006-aibot-crawl`: ClaudeBot 3 fetches, OAI-SearchBot 1, `/robots.txt`, 21 Nov; prior 30 days 0). **UNSUPPORTED for search data** — GSC and Bing both report `disconnected`, so zero query/impression/position evidence exists | LD-ok (read) | external read only | bot names, operators, stated purpose, fetch counts, paths, timestamps; connection status per source | 40 s: "Anthropic's and OpenAI's crawlers found it in a day" |
 | S7 | Research / evidence gathering for agent claims | `web-search`, `webfetch` | CONFIRMED (used this session for hub/kit checks) | LD-ok | external read only | queries, sources, dates, evidence class | 40 s (hallucination scoring) |
 | S8 | Detect and score a deliberately misbehaving worker agent | oversight + 5 scripted scenarios | KIT-VERIFIED (scenarios exist; our catch-rate unknown) | batch | LD-ok | none | scenario id, caught/missed, evidence | 70 s — the money shot |
 | S9 | Explain the decision to a non-technical owner | "owner briefing" skill (legibility = win condition) | To build | scheduled + S2 | LD-ok | none | briefing artifact hash | throughout |
+| S10 | **Fan work out to specialised role chats and reconcile them** | QwenWork task/sub-agent primitives — `qw_query qwenwork.tasks`, `execute send_message`, plus in-session `task` sub-agents | **CONFIRMED** (22 Nov: a persistent **marketing** role chat, `mwq1cvctyscvqu7b`, produced `output/video-script-v1.md` from the handover + rubric; briefed with the resolved D23 subject, the real Hashmeta trail and RUN-006 to produce v2. Three parallel in-session sub-agents produced the NHB / rattan / Indonesian-weaver probes) | LD-ok to dispatch; **Ship** to act on results | messages another agent | dispatched / acknowledged / completed recorded **separately**; sender, origin, authority, scope, evidence, next action per the contract's agent-message block | 25 s: one coordinator, several workers, same charter |
+
+**S10 is the row that answers "the engine, not a checkbox" most directly** — the platform is
+
+**S10b — Cross collab (founder role, added 22 Nov evening).** When the founder needs
+something from another chat agent (marketing, future role chats, sub-agents): plan the
+request in the main session, ship it via `send_message`, then **tell the founder to check
+the result** — the founder verifies by default. I self-check only when the founder
+explicitly specified it. Dispatch and completion are recorded separately per the
+agent-message protocol; authority and scope travel with the brief.
+
+**S10c — Cross change (founder command, added 22 Nov evening).** `cross-change` is the
+bidirectional device-sync verb: enumerate the project's chat agents, absorb inbound
+GitHub commits first, then push all new work (agent outputs included), update the dated
+handover with device + agents + verified SHA, and verify the remote. Identical procedure
+on every device; GitHub is the single source of truth; an unverified sync is never
+reported as one. Evidence artifacts: the dated handover files and the commit trail
+(e.g. `f50e5f2`, `72c125a`, `c4363be` — all main, all verified).
+not hosting our product, it *is* the org chart. Note the limit honestly: a dispatched message
+is not an acknowledged one, and an acknowledged one is not completed work. The contract
+requires those three states be reported separately, and `cross-resume` is the verb that
+authorises relaying reconciliation requests to role chats at all.
 
 S0, S2, S3, S4 and S8 are the oversight spine. S1, S5, S6, S7, S9 are the
 working company that spine watches over. That two-layer design lets us
@@ -99,8 +123,8 @@ track's own terms.
 - **Outputs (real files/artifacts):** pending-approval record + human-readable
   summary, then an allow/deny/expire ledger row.
 - **Why the platform specifically (vs. a script that pings a human):** the platform
-  owns the task while we wait — approval state, timeout, and resume live in
-  the task, not in our code. A hand-rolled webhook could ask, but it could
+  owns the task while we wait — approval state, timeout, and resume live in the
+  task, not in our code. A hand-rolled webhook could ask, but it could
   not keep the task in a state the owner sees. **That claim is inference
   until tested** — verify with one real blocked run before we say it in the
   demo.
@@ -229,3 +253,34 @@ For every decision, the agent must present: (1) what it is, (2) how it scores,
 (3) for/against (4) the smallest test, (5) a provisional recommendation
 if asked. Founder's decision is logged, agent's recommendation is separate.
 This replaces passive Q&A for product work. See `docs/MEMORY.md §2`.
+
+### Contract revision adopted 22 Nov 2026 — what it changes for this file
+
+`docs/AI_WORKING_HANDOVER.md` was replaced with the founder's revised portable contract
+(159 lines, reconciled with the general founder standard at revision `7315dbb`). The prior
+93-line version is preserved at remote commit `12ba7c6`. Three consequences for the skill map:
+
+1. **New verbs that produce platform evidence.** `visualise` / `vis3` (Mermaid for flows,
+   HTML/CSS when layout matters, **ASCII when a text sketch fits better** — pick the medium
+   per item; three frames start-middle-finish, labelled **proposals, not
+   playback proof**; **delegated by default to the marketing chat agent / sub-agents** when
+   the item serves the video narrative), `SS` (capture the actual surface inline), `Vision` (real rendered
+   screenshots; **static mockups cannot establish motion, timing or audio**), `ANA` (one
+   combined LD review per section, reporting *meets standard / needs correction / not
+   verified*), `placeholder`, `access`, `cross-resume`, `plan`. Each is a row-shaped artifact
+   opportunity — a storyboard, a capture, a review verdict — not just a conversational mode.
+2. **Push authority changed.** The old "never commit or push unless specifically asked" line is
+   gone, replaced by "apply existing task authority to commits, pushes, packaging and
+   publication… **do not invent repeated permission gates**." Destructive actions and
+   production configuration keep their own limits. `Automata` now states plainly: **a source
+   push alone does not establish a website deployment** — which is exactly the S6/S6b
+   distinction this table already draws.
+3. **Test routes are named.** `test chrome` (connected Chrome), `test chat` (built-in browser),
+   `test computer` (desktop control). Two attempts total, then the authorised fallback.
+   **Playwright requires this founder's approval before use.** Conversational self-review is
+   not browser validation — so no S-row may be promoted to CONFIRMED on the strength of one.
+
+The storyboard rule (contract §5) now governs the demo video and any animation work: annotate
+timing, holds, transitions, copy, assets and sound/silence; split into chapters; **up to ten
+meaningful compositions per chronological branch**. See `docs/STORYBOARD_SITE.md` and
+`docs/STORYBOARD_SEO_TOOL.md`.
