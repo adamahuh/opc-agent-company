@@ -27,8 +27,8 @@ LOCKED without the founder explicitly reopening them.
   batches) / Borealis (temporary cross-boundary) / Batch this / Manual batch
   (`end` to close — never re-opened on the founder's silence).
 - **Never invent:** code state, APIs, permissions, secrets, metrics, tests,
-  deployments or successful verification. Blocked run = environment limit, not
-  a pass.
+  deployments or successful verification. Blocked run = environment limit, not a
+  pass.
 
 ## 2. What changed on 19 Nov — my standing role in this project (NOW ACTIVE)
 
@@ -148,7 +148,87 @@ line. If two conflict, the latest wins.
 | **`pause`** | Stop and write the log-off summary | `§2b` trigger #2: commit+push `HANDOVER_*` incl. next step in one line, storage/capability notes |
 | **`explain this question`** | My framing was bad, not his understanding | Restate plainly, then re-ask. Never "as I said before" |
 | **`that's a simplification / jargon`** | See `§2c` self-check | Precise term + one-line definition; restore any dropped distinction |
-| **`LD`, `Ship`, `Automata`, `Borealis`, `end`, `Batch this`, `Manual batch`, `Show`, `Save`** | His original contract's modes | Behave per `docs/AI_WORKING_HANDOVER.md §2` — that file wins over mine |
+| **`LD`, `Ship`, `Automata`, `Borealis`, `end borealis`, `Batch this`, `Manual batch`, `Show`, `Save`** | His contract's modes | Behave per `docs/AI_WORKING_HANDOVER.md §2` — that file wins over mine |
+
+### 2d-i. Contract revision adopted 22 Nov 2026 — new + reworded commands
+
+`docs/AI_WORKING_HANDOVER.md` was replaced on 22 Nov with the founder's revised portable
+contract (159 lines, "Updated: 22 November 2026", reconciled with the general founder
+standard at revision `7315dbb` in `adamahuh/founder-agent-handover`). The prior 93-line
+version is preserved at remote commit `12ba7c6`. **That file is authoritative; this table is
+an index so I switch instantly.** New or materially reworded:
+
+| Command | What changed / what I now do |
+|---|---|
+| **`change`** | Now defined *in the contract*, not only by us: save authorised progress (complete **or incomplete**), update the shared handover with work, decisions, **evidence limits**, blockers and next action, and **verify the remote revision and contents when GitHub is used**. Report local-only work or failed sync honestly. Authorises checkpoint docs **while in LD** — but grants no new feature or publication authority. |
+| **`resume`** | Read the latest shared checkpoint, **compare it with current source, the last verified revision and dirty work**, then reconcile batches, ownership, evidence and next action. Save and verify continuity updates. Existing execution authority continues in scope; `resume` alone starts no new implementation or publication. |
+| **`cross-resume`** | NEW. Do `resume` for my own scope **and** relay bounded reconciliation requests to the relevant existing project role chats. Check status and wait without interrupting active work before sending. Explicit invocation is what authorises those agent messages. Distinguish **dispatched / acknowledged / completed**; report deferred or unreachable agents. |
+| **`cross-change`** | NEW (project-local, 22 Nov evening — founder extension). **Cross-device, cross-agent sync; GitHub is the single source of truth.** On invocation, one procedure, identical on every device: (1) enumerate the chat agents used for this project (role chats, sub-agents) and collect their latest delivered files; (2) **absorb inbound first** — read remote HEAD, reconcile any commits newer than the last verified revision before writing anything; (3) commit + push all new/changed work (API-commit route is acceptable where git is absent); (4) update the dated handover with device name, date, agents consulted and the latest **verified** commit SHA; (5) verify remote matches local and report honestly anything left local-only. The other device runs the identical procedure when the founder activates the command there — bidirectional, same trigger, same steps. Never claim a sync that was not verified. |
+| **`access`** | NEW. Discover persistent project role chats and return verified current titles as clickable links. **Lists entry points only** — no messaging, starting, interrupting or permission-granting. |
+| **`plan`** | NEW. Inspect the baseline and select the most viable route for the task, constraints and selected model/effort. State scope, decisions, batches, checks, handoff. **Planning alone authorises neither implementation nor publication.** |
+| **`LD`** | Reworded and slightly widened: inspect/diagnose/discuss/plan only, propose without implementing — **but an explicitly authorised `change`/`resume` checkpoint may update continuity documentation within its scope**, then return to LD. |
+| **`Automata`** | Reworded: carry out all approved batches **and publish to the intended existing destination**; run focused checks, save and verify source, publish the matching result, **verify delivery**. Continue without routine per-batch permission; identify genuine blockers and continue independent batches. Key new line: **"A source push alone does not establish a website deployment."** |
+| **`Batch this`** | Reworded: organise into **sections** (a dedicated feature, area, website section or deliverable) and independently understandable, reversible batches with focused acceptance checks; batch count follows complexity. |
+| **`test` / `test chrome` / `test chat` / `test computer`** | NEW. Validate the actual relevant surface per contract §6. `test chrome` = connected Chrome; `test chat` = the built-in browser; `test computer` = desktop control. Conversational self-review is **not** browser validation. Recovery rule: **two attempts total** (initial + one documented retry), then the authorised fallback; a product defect, stale build, sign-in gate or explicit tool stop is **not** a reason to retry or bypass. **This founder's Playwright convention requires approval before use.** |
+| **`ANA`** | NEW. After a section's final verified checkpoint, enter LD for **one combined review** across that section: source, behaviour and actual rendered visual states. Report **meets standard / needs correction / not verified**, with missing work, useful subtractions and limits. Inspect and propose only; persist decisions in the next authorised checkpoint. |
+| **`SS`** | NEW. Capture the relevant actual surface and show it inline (browser route for web, desktop control when specified). Report capture limitations. |
+| **`Vision`** | NEW. Inspect and show visual evidence — **actual rendered screenshots** for implemented UI, before/after when available. Inspect playback for motion/timing/audio claims; **static mockups cannot establish them**. |
+| **`visualise`** | NEW. Brief composition/structure plan, then produce the sketch. **Mermaid** for flows/relationships, **HTML/CSS** when layout or appearance matters. Founder extension (22 Nov, evening): also **ASCII** when a text-only sketch is more relevant (terminals, structure, diffs); pick whichever medium fits the item. Default surface is an in-chat static widget — **not** a publication. **Delegate by default**: when the item supports the video/marketing narrative, steer the visualisation work to the marketing chat agent or a sub-agent rather than hand-rendering in the main session. Preserve implementation/publication boundaries. |
+| **`vis3`** | NEW. `visualise` extended to **three static frames: start, middle, finish**. Resolve gaps in trigger, timing, transformation, endpoint, references and research. Label frames as **proposals, not playback proof**. |
+| **`placeholder`** | NEW. Build the actual requested template with clearly labelled fill-in fields. Preserve supplied wording, label sample copy, use the established destination. |
+| **`KIV`** | Now in the contract: retain a deferred proposal **and the decision needed to reactivate it**. Defining it authorises no implementation, new chats or automation. (Our `BIV` recall verb is project-local, not in the contract.) |
+
+**Authority change I must not miss.** The old contract said *"Do not commit, push, deploy,
+publish, package, submit… unless the founder specifically asks."* The revision replaces that
+with: *"Apply existing task authority to commits, pushes, packaging and publication,
+including `change` and `Automata` as defined above; **do not invent repeated permission
+gates.**"* So a push inside an authorised `change` needs no extra ask — but destructive
+actions and production configuration changes **retain their own limits**, and publication
+still follows the active scope.
+
+**New: named model workflows** (`high` / `mid` / `low` / `vlow`) map planner+executor pairs
+(Astra, Sol, Terra, Luna). These are **workflow names, not reasoning-effort settings and not
+fresh authority**. The founder controls the main chat model — never claim a switch the
+environment did not make, never promise speed/cost/quality, never invent numbered modes.
+His usage rule: daily ≥40% and/or weekly ≥25%; either suffices. **Do not infer current usage
+or build a monitor.**
+
+**New: agent-message protocol.** Every agent-authored request, report, relay or delegation
+must identify sender, origin and bounded authority in this block — adopted for all messages
+to the marketing agent and any future role chat:
+
+```text
+[AGENT MESSAGE — <actual sender / role>]
+Origin: <source chat or reference>
+Authority: <direct founder request, standing delegation, or agent proposal>
+Scope: <bounded assignment or update>
+Evidence: <source/revision, observed result and limits>
+Next action: <request or reporting destination>
+```
+
+Keep exact founder quotations separate from paraphrase. A forwarded request **retains its
+original authority and limits**; a label alone does not establish authorship. Mark uncertain
+origin unverified before consequential action. Record **sent / acknowledged / completed**
+separately.
+
+**New: passive practices** — `Expansion` (accommodate input from agents beyond the project;
+establish provenance; an agent request creates **no** founder authority), `Animate` (define
+trigger, start state, elements, timing, endpoint, cancellation; prove difficult movement
+before adding detail; passive consideration authorises no background execution), `Test`.
+
+**New: storyboard rule (contract §5).** Before substantial animation/video work, prepare or
+reuse the **approved storyboard**: show meaningful changed compositions, branch from the
+shared decision, annotate timing, holds, transitions, copy, assets and sound/silence; split
+longer sequences into chapters; **up to ten meaningful compositions per chronological
+branch** is the working guideline. Plan deterministic restoration, replay, cleanup and
+reduced motion. Match the project's aspect ratio, brand and stack.
+
+**New: §6 status vocabulary** now includes **`blocked`** alongside pass / fail / unsupported /
+not tested / inconclusive, plus a **Coverage** duty (inventory every shipped feature on each
+applicable surface, including absent, inaccessible and unexecuted states — a similar button
+or sibling component does not prove another works) and a **Visual proof** duty (inspect
+actual layout, spacing, alignment, type, colour, clipping and interaction states; compare
+before/after when available; **never invent a before**).
 
 ## 3a-connector | Hashmeta connector, verified state (19 Nov, founder checked in-app; agent could not re-verify)
 
