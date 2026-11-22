@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>embold'r — the impact check</title>
+<meta name="description" content="Free bounded visibility check for impact-driven businesses. Paste a URL: the impact gate accepts or declines, six machine-readability checks run, and a letter to the practitioner comes out.">
+<link rel="canonical" href="https://zdd44c4j.qwenwork.page/">
+<style>
+@font-face{font-family:'Source Serif 4';src:url('https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4@latest/latin-600-normal.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:'Source Serif 4';src:url('https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4@latest/latin-400-normal.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Source Serif 4';src:url('https://cdn.jsdelivr.net/fontsource/fonts/source-serif-4@latest/latin-400-italic.woff2') format('woff2');font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:'Source Sans 3';src:url('https://cdn.jsdelivr.net/fontsource/fonts/source-sans-3@latest/latin-400-normal.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Source Sans 3';src:url('https://cdn.jsdelivr.net/fontsource/fonts/source-sans-3@latest/latin-600-normal.woff2') format('woff2');font-weight:600;font-display:swap}
+:root{--paper:#F6F2E9;--paper-hi:#FBF9F3;--ink:#222820;--ink-2:#4A5248;--forest:#294B3A;--ochre:#C08A3E;--hairline:#DBD7CD}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:18px/1.6 'Source Sans 3',system-ui,sans-serif}
+#knot{position:fixed;inset:0;z-index:0;pointer-events:none}
+main{position:relative;z-index:1;max-width:840px;margin:0 auto;padding:64px 24px 120px}
+h1{font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:clamp(30px,5vw,52px);line-height:1.08;letter-spacing:-.02em}
+h1 em{font-style:italic}
+h2{font-family:'Source Serif 4',Georgia,serif;font-weight:500;font-size:clamp(24px,3vw,34px);margin-bottom:14px}
+h3{font-family:'Source Serif 4',Georgia,serif;font-weight:500;font-size:19px}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.hl{background:rgba(192,138,62,.28);padding:0 4px}
+.mono{font-family:ui-monospace,Consolas,monospace;font-size:14px;color:var(--ink-2)}
+.measure{max-width:640px}
+p.lede{margin:16px 0 32px;color:var(--ink-2)}
+.urlbar{display:flex;gap:10px;flex-wrap:wrap}
+.urlbar input{flex:1;min-width:260px;padding:13px 16px;border:1px solid var(--ink-2);border-radius:6px;font:inherit;background:#fff;color:var(--ink)}
+.btn{background:var(--forest);color:#fff;padding:14px 28px;border-radius:6px;font:600 16px 'Source Sans 3',system-ui,sans-serif;border:none;cursor:pointer}
+.btn:disabled{opacity:.6;cursor:wait}
+.chips{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{font:500 13px 'Source Sans 3',system-ui,sans-serif;color:var(--forest);border:1px solid var(--hairline);background:#fff;border-radius:20px;padding:4px 12px;cursor:pointer}
+.hint{margin-top:18px;color:var(--ink-2);font-size:15px}
+#result{margin-top:48px}
+.card{background:#fff;border:1px solid var(--hairline);padding:24px;border-radius:4px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+tbody tr:nth-child(even){background:var(--paper-hi)}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--hairline)}
+.pill{display:inline-block;font:500 12px 'Source Sans 3',system-ui,sans-serif;border:1px solid var(--ink-2);border-radius:20px;padding:2px 10px;margin:2px}
+.pill-pass{border-color:var(--forest);color:var(--forest);font-weight:700}
+.pill-unsup{border-style:dashed;color:var(--ink-2)}
+.verdict{display:flex;align-items:center;gap:10px;margin:8px 0 4px}
+.verdict .icon{font-size:22px;line-height:1}
+section{margin-top:72px;border-top:1px solid var(--hairline);padding-top:40px}
+.letter{white-space:pre-wrap;font-size:15px;color:var(--ink-2)}
+.regrow{display:flex;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--hairline);font-size:15px}
+.regrow .icon{flex:none}
+footer{margin-top:80px;color:var(--ink-2);font-size:14px}
+@media(max-width:640px){.urlbar .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){#knot{display:none}}
+</style>
+</head>
+<body>
+<canvas id="knot" aria-hidden="true"></canvas>
+<main>
+  <p class="eyebrow">embold'r · the impact check</p>
+  <h1>Machines are reading your work.<br>We check <em>what they see</em>.</h1>
+  <p class="lede measure">Paste your website. One bounded request per path, then a letter to the practitioner — what the machines can read today, and what we would fix first. <strong>Impact-driven businesses only:</strong> others are declined, with the reason stated.</p>
+
+  <div class="urlbar">
+    <input type="url" id="t-url" placeholder="https://your-impact-business.com" aria-label="Business URL">
+    <button class="btn" id="t-go" type="button">Run the check</button>
+  </div>
+  <div class="chips">
+    <span class="mono">try:</span>
+    <button class="chip" type="button" data-url="https://www.karajasumba.com">karajasumba.com</button>
+    <button class="chip" type="button" data-url="https://www.mokkowoodstudio.com">mokkowoodstudio.com</button>
+    <button class="chip" type="button" data-url="https://example.com">example.com (will be declined)</button>
+  </div>
+  <p class="hint measure">What the check looks for: can crawlers reach your pages (<span class="mono">robots.txt</span>, <span class="mono">sitemap.xml</span>), can they read who you are (structured data, description, canonical), and <strong>what your site says to the AI answer-engine crawlers</strong> (GPTBot, ClaudeBot, CCBot, Google-Extended). Every problem comes with its one-click fix — the exact snippet, ready to paste. No ranking promises — search engines decide that.</p>
+  <p class="hint measure" style="margin-top:10px">Plaforms this reaches: <strong>Google · Bing (feeds ChatGPT &amp; Copilot answers) · Yandex</strong> — one IndexNow ping covers Bing + Yandex — plus the AI answer engines through their crawlers. Not just Google and Bing: the alternative-engine story is built into the checks.</p>
+
+  <div id="result" aria-live="polite"></div>
+
+  <section>
+    <p class="eyebrow">The impact registry</p>
+    <h2>Every submission, logged.</h2>
+    <p class="measure" style="color:var(--ink-2);margin-bottom:20px">Accepted submissions are marked with a green leaf 🌿 (usable — impact-driven, audit ran). Declined submissions with a fallen leaf 🍂 (not usable — outside what embold'r serves, refusal logged as data).</p>
+    <div id="registry"><p class="mono">loading registry…</p></div>
+  </section>
+
+  <footer>
+    <p class="mono">registry: Supabase (PostgreSQL), provisioned and hosted via QwenWork Pages · every submission logged with URL, verdict, deciding keywords and timestamp · keyword-gate v1, human review pending · first pass automated; a human reads every accepted audit · nothing here promises ranking</p>
+    <p class="mono" style="margin-top:10px">embold'r — the agency lives at embold-r-ai-visibility.geo.hashmeta.tech</p>
+  </footer>
+</main>
+<script>
+(function(){
+  var btn=document.getElementById('t-go'),inp=document.getElementById('t-url'),out=document.getElementById('result');
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function iconFor(v){return v==='accepted'?'<span class="icon" title="usable — impact-driven">🌿</span>':(v==='declined'?'<span class="icon" title="not usable — declined">🍂</span>':'<span class="icon" title="queued for human review">🌱</span>')}
+  function run(url){
+    out.innerHTML='<p class="mono">checking — one request per path, 12s bound…</p>';
+    btn.disabled=true;
+    fetch('/api/check',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:url})})
+      .then(function(r){if(!r.ok)throw 0;return r.json()})
+      .then(function(d){
+        var h='<p class="eyebrow" style="margin-bottom:10px">Your check · '+esc(new Date().toISOString().slice(0,16).replace('T',' '))+' UTC</p>';
+        h+='<div class="verdict">'+iconFor(d.verdict)+'<h2 style="margin:0">'+d.verdict+'</h2></div>';
+        h+='<p class="measure" style="color:var(--ink-2);margin:6px 0 20px">'+esc(d.reason)+'</p>';
+        if(d.verdict==='accepted'){
+          h+='<div class="card"><h3 style="margin-bottom:14px">What the machines see</h3><table><tbody>';
+          for(var i=0;i<d.checks.length;i++){var c=d.checks[i];
+            var pl=c.grade==='pass'?'<span class="pill pill-pass">pass</span>':(c.grade==='blocked'?'<span class="pill pill-unsup">blocked</span>':'<span class="pill">fail</span>');
+            h+='<tr><td class="mono" style="color:var(--ink)">'+esc(c.path)+'</td><td class="mono">HTTP '+(c.status||0)+'</td><td>'+pl+'</td><td style="font-size:13px;color:var(--ink-2)">'+esc(c.note)+'</td></tr>';}
+          h+='</tbody></table></div>';
+          if(d.fixes&&d.fixes.length){
+            h+='<h3 style="font-size:22px;margin:28px 0 6px">One change at a time — copy, paste, done</h3>';
+            h+='<p class="measure" style="color:var(--ink-2);font-size:15px;margin-bottom:14px">We cannot edit your site from here (nobody should be able to). Each fix below is the exact change, ready to paste where it belongs.</p>';
+            for(var j=0;j<d.fixes.length;j++){var fx=d.fixes[j];
+              h+='<div class="card" style="margin-bottom:14px"><p style="font-weight:600">'+esc(fx.problem)+'</p>';
+              h+='<p style="font-size:14px;color:var(--ink-2);margin:6px 0 10px">'+esc(fx.action)+'</p>';
+              h+='<pre class="mono" style="background:var(--paper-hi);border:1px solid var(--hairline);padding:12px;overflow-x:auto;white-space:pre-wrap;border-radius:4px">'+esc(fx.snippet)+'</pre>';
+              h+='<div style="display:flex;gap:10px;align-items:center;margin-top:10px"><button class="btn" style="padding:8px 16px;font-size:14px" data-copy="'+j+'">Copy fix</button><span class="mono">where: '+esc(fx.where)+'</span></div></div>';}
+            out.__fixes=d.fixes;
+          } else {
+            h+='<p class="mono" style="margin-top:14px">no one-click fixes pending — every lever we check is already in place</p>';
+          }
+          h+='<div class="card" style="margin-top:16px"><h3 style="margin-bottom:12px">The letter</h3><p class="letter">'+esc(d.letter)+'</p></div>';
+        }
+        if(d.platforms&&d.verdict==='accepted'){
+          h+='<p class="mono" style="margin-top:14px">reaches: '+d.platforms.map(esc).join(' · ')+'</p>';
+        }
+        h+='<p class="mono" style="margin-top:12px">'+esc(d.note)+'</p>';
+        out.innerHTML=h;
+        loadRegistry();
+      })
+      .catch(function(){out.innerHTML='<p class="mono">engine unreachable — nothing was measured. Try again in a moment.</p>'})
+      .finally(function(){btn.disabled=false});
+  }
+  btn.addEventListener('click',function(){var u=(inp.value||'').trim();if(/^https?:\/\//i.test(u))run(u);else out.innerHTML='<p class="mono">enter a full URL starting with http(s)://</p>'});
+  out.addEventListener('click',function(e){
+    var t=e.target;
+    if(t&&t.getAttribute&&t.getAttribute('data-copy')!==null&&out.__fixes){
+      var fx=out.__fixes[Number(t.getAttribute('data-copy'))];
+      if(fx&&navigator.clipboard){navigator.clipboard.writeText(fx.snippet).then(function(){var old=t.textContent;t.textContent='Copied ✓';setTimeout(function(){t.textContent=old},1600)});}
+    }
+  });
+  document.querySelectorAll('.chip').forEach(function(ch){ch.addEventListener('click',function(){inp.value=ch.getAttribute('data-url');run(ch.getAttribute('data-url'))})});
+  function loadRegistry(){
+    fetch('/api/registry').then(function(r){return r.json()}).then(function(rows){
+      var el=document.getElementById('registry');
+      if(!rows||!rows.length){el.innerHTML='<p class="mono">registry empty — be the first</p>';return}
+      var h=rows.slice(0,12).map(function(r){return '<div class="regrow">'+iconFor(r.verdict)+'<span class="mono">'+esc(r.url)+'</span><span style="color:var(--ink-2)">'+esc(r.verdict)+'</span><span class="mono" style="margin-left:auto">'+esc((r.submitted_at||'').slice(0,16).replace('T',' '))+'</span></div>'}).join('');
+      el.innerHTML=h;
+    }).catch(function(){document.getElementById('registry').innerHTML='<p class="mono">registry unreachable</p>'});
+  }
+  loadRegistry();
+})();
+</script>
+<script>
+// Non-intrusive 3D element: a slowly rotating wireframe knot (loom ring) — decorative only,
+// deferred, reduced-motion safe, pauses when tab hidden. Not the weave.
+(function(){
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var c=document.getElementById('knot');if(!c)return;
+  var test=document.createElement('canvas');
+  if(!(window.WebGLRenderingContext&&(test.getContext('webgl2')||test.getContext('webgl'))))return;
+  import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js').then(setup).catch(function(){});
+  function setup(THREE){
+    var W=c.offsetWidth,H=c.offsetHeight;
+    var renderer=new THREE.WebGLRenderer({canvas:c,antialias:true,alpha:true});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+    renderer.setSize(W,H,false);
+    var scene=new THREE.Scene();
+    var cam=new THREE.PerspectiveCamera(40,W/H,0.1,100);cam.position.set(0,0,7.5);
+    var geo=new THREE.TorusKnotGeometry(1.7,0.42,140,18,2,3);
+    var mat=new THREE.MeshBasicMaterial({color:0x294B3A,wireframe:true,transparent:true,opacity:0.16});
+    var knot=new THREE.Mesh(geo,mat);scene.add(knot);
+    var knot2=new THREE.Mesh(new THREE.TorusKnotGeometry(1.7,0.42,140,18,3,4),new THREE.MeshBasicMaterial({color:0xC08A3E,wireframe:true,transparent:true,opacity:0.10}));
+    scene.add(knot2);
+    window.addEventListener('resize',function(){W=c.offsetWidth;H=c.offsetHeight;renderer.setSize(W,H,false);cam.aspect=W/H;cam.updateProjectionMatrix()},{passive:true});
+    var raf=null;
+    function loop(t){
+      if(document.hidden){raf=null;return}
+      knot.rotation.x=t*0.00006;knot.rotation.y=t*0.00009;
+      knot2.rotation.x=-t*0.00005;knot2.rotation.y=t*0.00007;
+      renderer.render(scene,cam);
+      raf=requestAnimationFrame(loop);
+    }
+    function wake(){if(raf===null)raf=requestAnimationFrame(loop)}
+    document.addEventListener('visibilitychange',wake);
+    wake();
+  }
+})();
+</script>
+</body>
+</html>
