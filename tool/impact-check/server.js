@@ -63,16 +63,36 @@ function grade(status) {
 
 // --- AI answer-engine crawlers: the site's stance toward each ---
 const AI_BOTS = ['GPTBot', 'OAI-SearchBot', 'ClaudeBot', 'CCBot', 'Google-Extended'];
+// --- per-platform reach: every engine reads you through named crawlers ---
+const PLATFORM_BOTS = {
+  'Google': ['Googlebot'],
+  'Bing (feeds ChatGPT & Copilot)': ['bingbot'],
+  'Yandex': ['YandexBot'],
+  'ChatGPT': ['GPTBot', 'OAI-SearchBot'],
+  'Gemini (AI training)': ['Google-Extended'],
+  'Claude': ['ClaudeBot'],
+  'Perplexity': ['PerplexityBot'],
+  'Common Crawl (feeds many AI models)': ['CCBot']
+};
 function botStance(robotsBody) {
   const t = (robotsBody || '');
   const out = {};
-  for (const bot of AI_BOTS) {
+  const ALL = Object.values(PLATFORM_BOTS).flat();
+  for (const bot of ALL) {
     const re = new RegExp('user-agent:\\s*' + bot + '[\\s\\S]*?(?=user-agent:|$)', 'i');
     const m = t.match(re);
     if (!m) { out[bot] = 'unspecified'; continue; }
     out[bot] = /^[\s\S]*disallow:\s*\/\s*$/im.test(m[0].trim() + '\n') ? 'blocked' : 'allowed';
   }
   return out;
+}
+function buildReach(stance) {
+  return Object.entries(PLATFORM_BOTS).map(([platform, bots]) => {
+    const crawlers = bots.map(b => ({ bot: b, stance: stance[b] || 'unspecified' }));
+    const blocked = crawlers.filter(c => c.stance === 'blocked').length;
+    const status = blocked === 0 ? 'open' : (blocked === bots.length ? 'blocked' : 'partial');
+    return { platform, crawlers, status };
+  });
 }
 
 // --- one-click fixes: copy, paste, done ---
@@ -114,7 +134,7 @@ async function audit(url) {
     { path: 'meta description', status: desc ? 200 : 404, grade: desc ? 'pass' : 'fail', note: desc ? `"${desc.slice(0, 70)}${desc.length > 70 ? '…' : ''}"` : 'empty — engines write your summary for you' },
     { path: 'canonical', status: canonical ? 200 : 404, grade: canonical ? 'pass' : 'fail', note: canonical ? 'self-referencing declared' : 'not declared' }
   ];
-  return { gate, checks, title, origin, auditedAt: new Date().toISOString(), robots, sm, jsonld, desc, canonical, stance };
+  return { gate, checks, title, origin, auditedAt: new Date().toISOString(), robots, sm, jsonld, desc, canonical, stance, reach: buildReach(stance) };
 }
 
 function letter({ url, title, checks, gate }) {
@@ -213,6 +233,7 @@ const server = http.createServer(async (req, res) => {
     return send(200, 'application/json', JSON.stringify({
       verdict: result.gate.verdict, reason: result.gate.reason,
       checks: declined ? [] : result.checks,
+      reach: declined ? [] : result.reach,
       fixes: declined ? [] : fixes,
       platforms: ['Google', 'Bing (feeds ChatGPT and Copilot)', 'Yandex — one IndexNow ping covers Bing + Yandex', 'AI answers read you through crawlers: GPTBot, ClaudeBot, CCBot, Google-Extended'],
       letter: declined ? null : letter({ url, title: result.title, checks: result.checks, gate: result.gate }),
