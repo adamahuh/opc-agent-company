@@ -29,7 +29,7 @@ Decomposed into three independent variables we must each lock separately:
   the hub's scoring rewards a product that speaks their language. Vanishing
   trades and local eco businesses will never out-rank Wikipedia on head
    terms, but *can* be the cited source for "where do I find X craft /
-  service in Y place" — an achievable win.
+   service in Y place" — an achievable win.
 - *What undermines it:* GEO tooling is nascent; measurement ("am I cited?")
   is noisy and hard to prove in 3 minutes. Judges wanting a "real business"
   may read AI-citation counts as vanity metrics.
@@ -69,7 +69,7 @@ engagement viable at all.
 ## 2b. Personas, user stories and the weekly flow
 
 **Standard check (19 Nov):** a PRD normally names *who* uses the product and
-*what they're trying to do*, in their own words (Figma's PRD guide lists
+*what* they're trying to do, in their own words (Figma's PRD guide lists
 "user personas and user stories" and "user flows" among the core sections;
 ours had neither — added here on purpose, in that guide's plain style).
 
@@ -264,7 +264,35 @@ paragraph.
 | D15 | Hosting | **QwenWork Pages, no domain purchased** | a domain buys us nothing in-window and adds cost, DNS and verification risk |
 | D11 / D12 | pricing · naming | **OPEN** | D11 waits on measured cost; D12 needs the positioning pass |
 
+## 4b. Differentiation — what makes our SEO different (added 22 Nov, from live build)
+
+Grounded in shipped artifacts, not aspiration. Framed against the generic agency:
+
+| Generic SEO agency | embold'r | Evidence artifact |
+|---|---|---|
+| Serves anyone who pays | **The impact gate** — non-impact submissions declined in software, refusal logged | `tool/impact-check` (tested: Karaja accepted, example.com declined) |
+| Promises rankings | **Never promises ranking** — fixes levers, re-measures, states limits aloud | proof-level vocabulary on both live sites; RUN-006 limits pills |
+| Dashboard reports | **The practitioner letter** — plain language, drafted from the subject's own page text | letter generator in the impact-check engine |
+| Bulk AI content | **≤10 assets, practitioner sign-off** | `rules/config.yaml` ceiling; refusals as data |
+| Measures rankings only | **Grades answer surfaces** (ABSENT/MEDIATED/THIN/OWNED) — AI citation, not just position | `src/report.py`; P3 founder batch pending |
+| Ignores low-volume subjects | **One-person cost structure** makes a 9-page weaver site a viable client | RUN-005 (karajasumba.com, 9 URLs) |
+| English-only | **Multilingual answer coverage** (EN/zh/ms) | `data/queries.yaml` S1 set |
+
+One-line version for judges: **everyone else sells visibility; we sell verifiability.**
+
+## 4c. Two-site + tool architecture (added 22 Nov)
+
+- **Hashmeta site** (embold-r-ai-visibility.geo.hashmeta.tech): the scored 15% deliverable — built with Hashmeta AI, ~42 credits, four tasks, redesign verified live.
+- **Coded flagship** (y633cekp.qwenwork.page): hand-coded, self-hosted Source Serif 4/Sans 3, woven-threads background (3D + 2D fallback), free-audit section, instrument section. V13.
+- **Impact-check engine** (`tool/impact-check/`, deployed at zdd44c4j.qwenwork.page): option B of the D7 fork — public input, gated audit (impact classification), 7 checks incl. AI-crawler stance, one-click copy-paste fixes, the practitioner letter, Supabase impact registry (provisioned via QWWork Pages). **Embedded live in the Hashmeta hero** — users never see the engine URL; the coded flagship's URL was retired for it.
+- **Hashmeta role:** audit engine + instruments (GSC/Bing connections, AI-bot traffic log) — "judgment on top of infrastructure."
+
+## 12. MVP status (added 22 Nov — replaces earlier "tooling is internal" only)
+
+The gated impact check is **built and tested** (one bounded fetch per path, own UA, 12s bound; keyword-gate v1 heuristic with human review pending; declined submissions logged). D7 is honoured via option B: the form is public, the audit runs only on auto-accepted impact verdicts + operator allowlist. The impact registry (impact vs non-impact, keywords tracked as data) is a product surface and a public-good candidate.
+
 ## 13. D9 outcome — demo subject (locked 19 Nov, founder's call)
+
 
 Two-layer build, full list with sources/dates in `CANDIDATES.md`.
 
@@ -274,8 +302,53 @@ Two-layer build, full list with sources/dates in `CANDIDATES.md`.
 | **Fixed** | One fictitious one-person craft business profiled from the above, labelled synthetic on screen and in site copy | The product running end-to-end → Demo + QwenWork-use evidence |
 
 Line we do not cross: no AI-generated copy attributed to a real named
-pritioner appears in the demo, the website, or anything the organisers may
+practitioner appears in the demo, the website, or anything the organisers may
 redistribute under the licence clause.
 
 Unlocks next: **D10** (what the 3-minute video is allowed to claim about
 "after"), then **D11** (pricing with measured credit cost), then naming.
+
+## 14. KIV — Idea vault (recorded, not built)
+
+Founder command **KIV**: new ideas land here (or in a more fitting existing
+section) as records only. **BIV**: founder recalls them into active work on
+demand. Nothing below is committed, scheduled or implied by the locked
+decisions above.
+
+| # | Idea | Status | Notes |
+|---|---|---|---|
+| 1 | Interactive agency site (embold'r) | KIV 21 Nov | Agency landing page includes interactive elements rather than a purely static page. |
+| 2 | Stylised QR code → mobile/tablet MVP | KIV 21 Nov | On-brand QR (paper/forest/clay, to be contrast-checked) linking to a future mobile/tablet MVP. **Target URL does not exist yet — no QR may be published encoding an invented URL.** Decide target before generation; encode a real, approved destination. |
+| 3 | Mobile / tablet MVP | KIV 21 Nov | Separate artefact from the landing page and the synthetic demo site; role and scope undefined. Conflicts to check at recall time: D7 (no SaaS/dashboard), D15 (two one-page URLs must not blur). |
+| 4 | Own-site ranking experiment | KIV 21 Nov | Build our own (embold'r) site with our customisations, attempt to rank it highly, and illustrate "if businesses did these customisations, they would rank highly." Honesty constraints at recall time: correlation ≠ guaranteed ranking for other sites (D10 no projected scores); must be framed as one demonstration, not a promise. Pairs with the "focus on subjects with their own sites" rationale (owned site = actionable CTAs; third-party-only presence = traffic exposure, no client conversion surface). |
+| 5 | Subject focus: owned-site practitioners | KIV 21 Nov (founder direction) | Prefer demo/audit subjects who own their sites (e.g. Karaja Sumba). Third-party-only subjects (e.g. Nurul Akrillyati, Chen Foon Kee) retained as *before-state/extreme-case* evidence of the mediated problem, not as conversion-facing subjects. Needs a D-list decision if formally locked. |
+
+## 15. Target sectors & traffic lanes (locked 22 Nov, founder direction)
+
+**Sectors for the hack: two — heritage crafts + environmental.** Community/care
+parked: it skirts YMYL (health/financial advice adjacent) and our own gate
+makes it the wrong first demo. All existing evidence lives in heritage crafts
+(Karaja, beadwork, Suikoushya, Nurul — four real subjects, two reproduced
+findings); environmental is measurable, non-YMYL terrain. Depth over breadth.
+
+**Two traffic lanes, different sports:**
+
+| | Casual traffic | Professional traffic |
+|---|---|---|
+| Who | tourists, gift-buyers, curious | curators, procurement, researchers, journalists |
+| Queries | "sumba ikat weaving workshop" — high volume, mobile, emotional | "textile conservation supplier Indonesia" — tiny volume, huge intent |
+| Wins via | LocalBusiness/Product schema, prices/hours, real photos, one WhatsApp CTA, fast pages, long-tail pages | Organization/Person schema, named author, provenance/method pages, case studies, .edu/.gov citations |
+| Converts | a message, a booking | an email, an RFP, a grant |
+| Product mapping | the **Rescue** tier fixes this lane for the practitioner | the **institutional annual** sells into this lane for the buyer |
+
+Demo line: *one subject, two lanes — we make the work legible to both the
+tourist and the curator.*
+
+## 16. SEO chain — standing loop (locked 22 Nov, founder direction)
+
+Continuously maintained, not one-shot: keep updating the SEO chain — what
+customers actually search and care about is re-learned on every run — and
+that learning drives what changes we surface (fix priority + query set).
+Concretely: every audit and P3-style capture feeds back into the query set
+and fix ordering; the engine's fix list and `data/queries.yaml` are living
+artifacts, updated per engagement, never frozen.
